@@ -13,12 +13,21 @@ protocol ImageDetailsView: class {
 }
 
 class ImageDetailsViewController: UIViewController {
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var upperButton: UIButton!
+    @IBOutlet weak var bottomButton: UIButton!
     
+    var configurator: ImageDetailsConfigurator?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        configurator?.configure(imageDetailsViewController: self)
+    }
 }
 
-
 extension ImageDetailsViewController: ImageDetailsView {
-    // MARK: ImageDetailsView
     func display(image: Image) {
+        
     }
 }

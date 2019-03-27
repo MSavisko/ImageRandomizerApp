@@ -10,6 +10,8 @@
 		0A65AE98171334C5237FA5F6 /* Pods_ImageRandomizerAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 807C53527D29505E1DFCC241 /* Pods_ImageRandomizerAppUITests.framework */; };
 		2A2314D0DA9090475F588356 /* Pods_ImageRandomizerAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4471526FB54E6DA2F6BC2A27 /* Pods_ImageRandomizerAppTests.framework */; };
 		3EB125CAA3AB5129A876CAAC /* Pods_ImageRandomizerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA7A88D089F158582DADEED /* Pods_ImageRandomizerApp.framework */; };
+		929EA655224C2243005910F9 /* ImageDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929EA654224C2243005910F9 /* ImageDetailsConfigurator.swift */; };
+		929EA657224C2458005910F9 /* ImageDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929EA656224C2458005910F9 /* ImageDetailsPresenter.swift */; };
 		92BEE87B224C1047003BF17F /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE87A224C1047003BF17F /* ImageDetailsViewController.swift */; };
 		92BEE87F224C123B003BF17F /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE87E224C123B003BF17F /* Image.swift */; };
 		92BEE881224C15A8003BF17F /* ImageDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92BEE880224C15A8003BF17F /* ImageDetailsViewController.xib */; };
@@ -48,6 +50,8 @@
 		70CCF5BAE47BCDA70ACF5D6E /* Pods-ImageRandomizerAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageRandomizerAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-ImageRandomizerAppUITests/Pods-ImageRandomizerAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		807C53527D29505E1DFCC241 /* Pods_ImageRandomizerAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageRandomizerAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A084E7A22FC32BA5CC2E4B7 /* Pods-ImageRandomizerAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageRandomizerAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ImageRandomizerAppTests/Pods-ImageRandomizerAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		929EA654224C2243005910F9 /* ImageDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsConfigurator.swift; sourceTree = "<group>"; };
+		929EA656224C2458005910F9 /* ImageDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsPresenter.swift; sourceTree = "<group>"; };
 		92BEE87A224C1047003BF17F /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
 		92BEE87E224C123B003BF17F /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		92BEE880224C15A8003BF17F /* ImageDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageDetailsViewController.xib; sourceTree = "<group>"; };
@@ -121,6 +125,8 @@
 		92BEE877224C0F34003BF17F /* ImageDetails */ = {
 			isa = PBXGroup;
 			children = (
+				929EA654224C2243005910F9 /* ImageDetailsConfigurator.swift */,
+				929EA656224C2458005910F9 /* ImageDetailsPresenter.swift */,
 				92BEE87A224C1047003BF17F /* ImageDetailsViewController.swift */,
 				92BEE880224C15A8003BF17F /* ImageDetailsViewController.xib */,
 			);
@@ -456,9 +462,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				92BEE87B224C1047003BF17F /* ImageDetailsViewController.swift in Sources */,
+				929EA657224C2458005910F9 /* ImageDetailsPresenter.swift in Sources */,
 				92BEE87F224C123B003BF17F /* Image.swift in Sources */,
 				92D5468E224BF58C00AD75E7 /* ViewController.swift in Sources */,
 				92D5468C224BF58C00AD75E7 /* AppDelegate.swift in Sources */,
+				929EA655224C2243005910F9 /* ImageDetailsConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
