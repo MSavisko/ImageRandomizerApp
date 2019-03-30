@@ -33,7 +33,7 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GWF-aD-XLI">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GWF-aD-XLI">
                     <rect key="frame" x="31.5" y="140" width="312.5" height="166.5"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="GWF-aD-XLI" secondAttribute="height" multiplier="15:8" id="5dS-a4-skD"/>

@@ -61,6 +61,18 @@ extension ImageDetailsViewController: ImageDetailsView {
             .subscribe(onNext: { [weak self] _ in
                 self?.presenter?.pressedView()
             }).disposed(by: disposeBag)
+        
+        bottomButton.rx
+            .controlEvent([.touchUpInside])
+            .subscribe(onNext: { [weak self] in
+                self?.presenter?.pressedBottomButton()
+            }).disposed(by: disposeBag)
+        
+        upperButton.rx
+            .controlEvent([.touchUpInside])
+            .subscribe(onNext: { [weak self] _ in
+                self?.presenter?.pressedUpperButton()
+            }).disposed(by: disposeBag)
     }
     
     func display(image: Image) {

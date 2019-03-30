@@ -14,6 +14,8 @@ protocol ImageDetailsPresenter: class {
     func endEditingImageName(text: String?)
     func pressedRightBarItem()
     func pressedView()
+    func pressedBottomButton()
+    func pressedUpperButton()
 }
 
 class ImageDetailsPresenterImpl: ImageDetailsPresenter {
@@ -21,17 +23,20 @@ class ImageDetailsPresenterImpl: ImageDetailsPresenter {
     private var image: Image
     private var router: ImageDetailsRouter
     private let dateProvider: DateProvider
+    private let chooseImageUseCase: ChooseImageUseCase
     
     private var disposeBag = DisposeBag()
     
     init(view: ImageDetailsView,
          router: ImageDetailsRouter,
          image: Image,
-         dateProvider: DateProvider) {
+         dateProvider: DateProvider,
+         chooseImageUseCase: ChooseImageUseCase) {
         self.view = view
         self.router = router
         self.image = image
         self.dateProvider = dateProvider
+        self.chooseImageUseCase = chooseImageUseCase
     }
     
     // MARK: ImageDetailsPresenter
@@ -64,5 +69,27 @@ class ImageDetailsPresenterImpl: ImageDetailsPresenter {
     
     func pressedView() {
         view?.endEditing()
+    }
+    
+    func pressedBottomButton() {
+        chooseImageUseCase
+            .chooseImage(parameters: .random)
+            .subscribe(onNext: { [weak self] image in
+                self?.view?.display(image: image)
+            }, onError: { [weak self] error in
+                guard let this = self else {
+                    return
+                }
+                this.router
+                    .presentAlert(title: "Error",
+                                  subtitle: error.localizedDescription,
+                                  confirmTitle: "OK")
+                    .subscribe(onNext: { _ in })
+                    .disposed(by: this.disposeBag)
+            }).disposed(by: disposeBag)
+    }
+    
+    func pressedUpperButton() {
+        router.showImagesList()
     }
 }

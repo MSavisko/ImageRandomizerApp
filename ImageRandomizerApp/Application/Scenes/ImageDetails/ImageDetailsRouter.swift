@@ -16,6 +16,7 @@ protocol ImageDetailsRouter: ViewRouter {
     func presentAlert(title: String, subtitle: String,
                       confirmTitle: String) -> Observable<(Bool, Bool)>
     func dismissAlert()
+    func showImagesList()
 }
 
 class ImageDetailsRouterImpl: ImageDetailsRouter {
@@ -50,5 +51,9 @@ class ImageDetailsRouterImpl: ImageDetailsRouter {
     
     func dismissAlert() {
         alertViewController?.dismiss(animated: true)
+    }
+    
+    func showImagesList() {
+        print("Show image list")
     }
 }
