@@ -1,11 +1,13 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '10.0'
 
 def install_dependencies
-  #Download and caching images
   pod 'Kingfisher', '5.3.0'
   pod 'RxSwift', '4.4.2'
   pod 'RxCocoa', '4.4.2'
+  pod "RxGesture", '2.1.0'
+  pod 'RealmSwift', '3.13.1'
+  pod 'RxRealm', '0.7.6'
 end
 
 target 'ImageRandomizerApp' do
