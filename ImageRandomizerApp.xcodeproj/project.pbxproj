@@ -10,6 +10,10 @@
 		0A65AE98171334C5237FA5F6 /* Pods_ImageRandomizerAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 807C53527D29505E1DFCC241 /* Pods_ImageRandomizerAppUITests.framework */; };
 		2A2314D0DA9090475F588356 /* Pods_ImageRandomizerAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4471526FB54E6DA2F6BC2A27 /* Pods_ImageRandomizerAppTests.framework */; };
 		3EB125CAA3AB5129A876CAAC /* Pods_ImageRandomizerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA7A88D089F158582DADEED /* Pods_ImageRandomizerApp.framework */; };
+		925B6DA7224E99380047FAE8 /* UIImageView+RxKingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B6DA6224E99380047FAE8 /* UIImageView+RxKingfisher.swift */; };
+		925B6DAA224EA3830047FAE8 /* UIViewController+Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B6DA9224EA3830047FAE8 /* UIViewController+Load.swift */; };
+		925B6DAF224FAE9F0047FAE8 /* ImageDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B6DAE224FAE9F0047FAE8 /* ImageDetailsRouter.swift */; };
+		925B6DB3224FC9EF0047FAE8 /* DateProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B6DB2224FC9EF0047FAE8 /* DateProvider.swift */; };
 		929EA655224C2243005910F9 /* ImageDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929EA654224C2243005910F9 /* ImageDetailsConfigurator.swift */; };
 		929EA657224C2458005910F9 /* ImageDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929EA656224C2458005910F9 /* ImageDetailsPresenter.swift */; };
 		92BEE87B224C1047003BF17F /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE87A224C1047003BF17F /* ImageDetailsViewController.swift */; };
@@ -50,6 +54,10 @@
 		70CCF5BAE47BCDA70ACF5D6E /* Pods-ImageRandomizerAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageRandomizerAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-ImageRandomizerAppUITests/Pods-ImageRandomizerAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		807C53527D29505E1DFCC241 /* Pods_ImageRandomizerAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageRandomizerAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A084E7A22FC32BA5CC2E4B7 /* Pods-ImageRandomizerAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageRandomizerAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ImageRandomizerAppTests/Pods-ImageRandomizerAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		925B6DA6224E99380047FAE8 /* UIImageView+RxKingfisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+RxKingfisher.swift"; sourceTree = "<group>"; };
+		925B6DA9224EA3830047FAE8 /* UIViewController+Load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Load.swift"; sourceTree = "<group>"; };
+		925B6DAE224FAE9F0047FAE8 /* ImageDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsRouter.swift; sourceTree = "<group>"; };
+		925B6DB2224FC9EF0047FAE8 /* DateProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateProvider.swift; sourceTree = "<group>"; };
 		929EA654224C2243005910F9 /* ImageDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsConfigurator.swift; sourceTree = "<group>"; };
 		929EA656224C2458005910F9 /* ImageDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsPresenter.swift; sourceTree = "<group>"; };
 		92BEE87A224C1047003BF17F /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
@@ -112,6 +120,80 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		925B6DA2224E987F0047FAE8 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				925B6DA4224E98A90047FAE8 /* UIKit */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		925B6DA4224E98A90047FAE8 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				925B6DA8224EA3610047FAE8 /* UIViewController */,
+				925B6DA5224E98BB0047FAE8 /* UIImageView */,
+			);
+			path = UIKit;
+			sourceTree = "<group>";
+		};
+		925B6DA5224E98BB0047FAE8 /* UIImageView */ = {
+			isa = PBXGroup;
+			children = (
+				925B6DA6224E99380047FAE8 /* UIImageView+RxKingfisher.swift */,
+			);
+			path = UIImageView;
+			sourceTree = "<group>";
+		};
+		925B6DA8224EA3610047FAE8 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				925B6DA9224EA3830047FAE8 /* UIViewController+Load.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		925B6DAB224F701B0047FAE8 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		925B6DAC224F74F80047FAE8 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				92BEE87C224C1218003BF17F /* Core */,
+				925B6DB0224FB9490047FAE8 /* EntityGateway */,
+				92BEE876224C0F2A003BF17F /* Scenes */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		925B6DAD224F88480047FAE8 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				92D54692224BF58D00AD75E7 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		925B6DB0224FB9490047FAE8 /* EntityGateway */ = {
+			isa = PBXGroup;
+			children = (
+				925B6DB1224FC9DA0047FAE8 /* Date */,
+			);
+			path = EntityGateway;
+			sourceTree = "<group>";
+		};
+		925B6DB1224FC9DA0047FAE8 /* Date */ = {
+			isa = PBXGroup;
+			children = (
+				925B6DB2224FC9EF0047FAE8 /* DateProvider.swift */,
+			);
+			path = Date;
+			sourceTree = "<group>";
+		};
 		92BEE876224C0F2A003BF17F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +209,7 @@
 			children = (
 				929EA654224C2243005910F9 /* ImageDetailsConfigurator.swift */,
 				929EA656224C2458005910F9 /* ImageDetailsPresenter.swift */,
+				925B6DAE224FAE9F0047FAE8 /* ImageDetailsRouter.swift */,
 				92BEE87A224C1047003BF17F /* ImageDetailsViewController.swift */,
 				92BEE880224C15A8003BF17F /* ImageDetailsViewController.xib */,
 			);
@@ -151,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				92BEE87D224C1227003BF17F /* Entities */,
+				925B6DAB224F701B0047FAE8 /* UseCases */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -188,12 +272,12 @@
 		92D5468A224BF58C00AD75E7 /* ImageRandomizerApp */ = {
 			isa = PBXGroup;
 			children = (
-				92BEE87C224C1218003BF17F /* Core */,
-				92BEE876224C0F2A003BF17F /* Scenes */,
+				925B6DAC224F74F80047FAE8 /* Application */,
+				925B6DA2224E987F0047FAE8 /* Library */,
+				925B6DAD224F88480047FAE8 /* Resources */,
 				92D5468B224BF58C00AD75E7 /* AppDelegate.swift */,
 				92D5468D224BF58C00AD75E7 /* ViewController.swift */,
 				92D5468F224BF58C00AD75E7 /* Main.storyboard */,
-				92D54692224BF58D00AD75E7 /* Assets.xcassets */,
 				92D54694224BF58D00AD75E7 /* LaunchScreen.storyboard */,
 				92D54697224BF58D00AD75E7 /* Info.plist */,
 			);
@@ -436,8 +520,12 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ImageRandomizerApp/Pods-ImageRandomizerApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -445,8 +533,12 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,10 +555,14 @@
 			files = (
 				92BEE87B224C1047003BF17F /* ImageDetailsViewController.swift in Sources */,
 				929EA657224C2458005910F9 /* ImageDetailsPresenter.swift in Sources */,
+				925B6DAF224FAE9F0047FAE8 /* ImageDetailsRouter.swift in Sources */,
 				92BEE87F224C123B003BF17F /* Image.swift in Sources */,
 				92D5468E224BF58C00AD75E7 /* ViewController.swift in Sources */,
 				92D5468C224BF58C00AD75E7 /* AppDelegate.swift in Sources */,
+				925B6DB3224FC9EF0047FAE8 /* DateProvider.swift in Sources */,
 				929EA655224C2243005910F9 /* ImageDetailsConfigurator.swift in Sources */,
+				925B6DAA224EA3830047FAE8 /* UIViewController+Load.swift in Sources */,
+				925B6DA7224E99380047FAE8 /* UIImageView+RxKingfisher.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,7 +14,7 @@
             <connections>
                 <outlet property="bottomButton" destination="nh1-0y-McW" id="Q3m-cD-HAy"/>
                 <outlet property="imageView" destination="GWF-aD-XLI" id="Sqa-4y-U2u"/>
-                <outlet property="nameTextField" destination="1hX-QA-Dgp" id="ocs-9y-hgE"/>
+                <outlet property="nameTextField" destination="1hX-QA-Dgp" id="bdB-G1-Naj"/>
                 <outlet property="upperButton" destination="HgR-MZ-IrV" id="WyD-LO-PcZ"/>
                 <outlet property="view" destination="iN0-l3-epB" id="wTb-Al-B52"/>
             </connections>
@@ -25,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1hX-QA-Dgp">
-                    <rect key="frame" x="40" y="60" width="295" height="40"/>
+                    <rect key="frame" x="31.5" y="60" width="312.5" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="AkN-M9-aR0"/>
                     </constraints>
@@ -33,8 +33,8 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GWF-aD-XLI">
-                    <rect key="frame" x="67.5" y="140" width="240" height="128"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GWF-aD-XLI">
+                    <rect key="frame" x="31.5" y="140" width="312.5" height="166.5"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="GWF-aD-XLI" secondAttribute="height" multiplier="15:8" id="5dS-a4-skD"/>
                     </constraints>
@@ -60,15 +60,15 @@
             <constraints>
                 <constraint firstItem="nh1-0y-McW" firstAttribute="trailing" secondItem="HgR-MZ-IrV" secondAttribute="trailing" id="0Ow-s4-mC8"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="nh1-0y-McW" secondAttribute="bottom" constant="20" id="2iK-xe-5M0"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1hX-QA-Dgp" secondAttribute="trailing" constant="40" id="A5S-cJ-2FD"/>
                 <constraint firstItem="nh1-0y-McW" firstAttribute="leading" secondItem="HgR-MZ-IrV" secondAttribute="leading" id="Dgo-Sj-CH0"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="nh1-0y-McW" secondAttribute="trailing" constant="20" id="K2u-Bq-I71"/>
+                <constraint firstItem="GWF-aD-XLI" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="1:1.2" id="R7y-Ah-Bmx"/>
                 <constraint firstItem="GWF-aD-XLI" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Ro0-Ds-uZg"/>
                 <constraint firstItem="nh1-0y-McW" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="Ts6-qC-Kyd"/>
-                <constraint firstItem="1hX-QA-Dgp" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="40" id="fis-Np-S38"/>
+                <constraint firstItem="1hX-QA-Dgp" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="1:1.2" id="YQq-lj-qYn"/>
                 <constraint firstItem="nh1-0y-McW" firstAttribute="top" secondItem="HgR-MZ-IrV" secondAttribute="bottom" constant="20" id="joI-P4-6Rd"/>
                 <constraint firstItem="GWF-aD-XLI" firstAttribute="top" secondItem="1hX-QA-Dgp" secondAttribute="bottom" constant="40" id="jxz-UN-PKE"/>
-                <constraint firstItem="GWF-aD-XLI" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="240:667" id="lgl-Hs-1Od"/>
+                <constraint firstItem="1hX-QA-Dgp" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="pmY-q9-Ko0"/>
                 <constraint firstItem="1hX-QA-Dgp" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="40" id="wlO-sn-xYv"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
