@@ -10,6 +10,7 @@ import Foundation
 import RxSwift
 
 protocol ImageDetailsPresenter: class {
+    var router: ImageDetailsRouter { get }
     func viewDidLoad()
     func endEditingImageName(text: String?)
     func pressedRightBarItem()
@@ -21,7 +22,7 @@ protocol ImageDetailsPresenter: class {
 class ImageDetailsPresenterImpl: ImageDetailsPresenter {
     private weak var view: ImageDetailsView?
     private var image: Image
-    private var router: ImageDetailsRouter
+    var router: ImageDetailsRouter
     private let dateProvider: DateGateway
     private let chooseImageUseCase: ChooseImageUseCase
     private let updateImageUseCase: UpdateImageUseCase
@@ -46,9 +47,10 @@ class ImageDetailsPresenterImpl: ImageDetailsPresenter {
     func viewDidLoad() {
         view?.setup()
         chooseLatestImage()
+        view?.display(navigationTitle: "Details")
         view?.display(image: image)
-        view?.display(upperButtonTitle: "Select")
-        view?.display(bottomButtonTitle: "Random")
+        view?.display(upperButtonTitle: "SELECT")
+        view?.display(bottomButtonTitle: "RANDOM")
         view?.displayInfoIcon(name: "info-icon")
     }
     
@@ -94,7 +96,8 @@ class ImageDetailsPresenterImpl: ImageDetailsPresenter {
     }
     
     func pressedUpperButton() {
-        router.showImagesList()
+        view?.hideBackButtonText()
+        router.showImagesList(imageListPresenterDelegate: self)
     }
     
     // MARK: Handlers
@@ -116,5 +119,12 @@ class ImageDetailsPresenterImpl: ImageDetailsPresenter {
                           confirmTitle: "OK")
             .subscribe(onNext: { _ in })
             .disposed(by: disposeBag)
+    }
+}
+
+extension ImageDetailsPresenterImpl: ImagesListPresenterDelegate {
+    func imagesListPresenter(_ presenter: ImagesListPresenter,
+                             didSelect image: Image) {
+        view?.display(image: image)
     }
 }

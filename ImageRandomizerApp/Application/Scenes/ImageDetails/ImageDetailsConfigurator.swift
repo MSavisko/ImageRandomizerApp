@@ -16,13 +16,6 @@ protocol ImageDetailsConfigurator {
 class ImageDetailsConfiguratorImpl: ImageDetailsConfigurator {
     func configure(imageDetailsViewController: ImageDetailsViewController) {
         // Image
-        /*
-        let absoluteImageUrlString = "https://volleycountry.com/wp-content/uploads/2017/11/volleyball-england-popular.jpg"
-        let image = Image(imageId: UUID().uuidString,
-                          name: "",
-                          imageURL: URL(string: absoluteImageUrlString),
-                          ratio: 1.499)
-        */
         let image = Image.empty
         
         // Router
@@ -31,7 +24,7 @@ class ImageDetailsConfiguratorImpl: ImageDetailsConfigurator {
         // Date
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
-        let dateProvider = LocalDateGatewayImpl(dateFormatter: dateFormatter)
+        let localDateGateway = LocalDateGatewayImpl(dateFormatter: dateFormatter)
         
         // Choose Image Use Case
         let apiClient = ApiClientImpl(urlSessionConfiguration: .default,
@@ -52,7 +45,7 @@ class ImageDetailsConfiguratorImpl: ImageDetailsConfigurator {
         let presenter = ImageDetailsPresenterImpl(view: imageDetailsViewController,
                                                   router: router,
                                                   image: image,
-                                                  dateProvider: dateProvider,
+                                                  dateProvider: localDateGateway,
                                                   chooseImageUseCase: chooseImageUseCase,
                                                   updateImageUseCase: updateImageUseCase)
         imageDetailsViewController.presenter = presenter
