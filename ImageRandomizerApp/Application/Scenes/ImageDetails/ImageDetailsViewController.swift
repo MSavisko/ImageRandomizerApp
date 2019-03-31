@@ -12,11 +12,13 @@ import RxGesture
 
 protocol ImageDetailsView: class {
     func setup()
+    func display(navigationTitle: String)
     func display(image: Image)
     func display(upperButtonTitle: String)
     func display(bottomButtonTitle: String)
     func displayInfoIcon(name: String)
     func endEditing()
+    func hideBackButtonText()
 }
 
 class ImageDetailsViewController: UIViewController {
@@ -78,6 +80,18 @@ extension ImageDetailsViewController: ImageDetailsView {
             .drive(onNext: { [weak self] _ in
                 self?.presenter?.pressedUpperButton()
             }).disposed(by: disposeBag)
+        
+        let item = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = item
+        
+        imageView.layer.cornerRadius = 20.0
+        bottomButton.layer.cornerRadius = 10.0
+        upperButton.layer.cornerRadius = 10.0
+        nameTextField.layer.cornerRadius = 10.0
+    }
+    
+    func display(navigationTitle: String) {
+        navigationItem.title = navigationTitle
     }
     
     func display(image: Image) {
@@ -115,5 +129,9 @@ extension ImageDetailsViewController: ImageDetailsView {
     
     func endEditing() {
         view.endEditing(true)
+    }
+    
+    func hideBackButtonText() {
+        //navigationItem.backBarButtonItem?.title = " "
     }
 }
