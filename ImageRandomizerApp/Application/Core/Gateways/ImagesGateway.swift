@@ -9,6 +9,6 @@
 import Foundation
 import RxSwift
 
-protocol ImagesGateway {
+protocol ImagesGateway: class {
     func fetchImages() -> Observable<[Image]>
 }

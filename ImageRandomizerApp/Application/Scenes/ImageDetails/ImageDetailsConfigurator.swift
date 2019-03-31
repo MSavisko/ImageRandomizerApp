@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 protocol ImageDetailsConfigurator {
     func configure(imageDetailsViewController: ImageDetailsViewController)
@@ -33,7 +34,12 @@ class ImageDetailsConfiguratorImpl: ImageDetailsConfigurator {
         let apiClient = ApiClientImpl(urlSessionConfiguration: .default,
                                       completionHandlerQueue: .main)
         let apiImageGateway = ApiImagesGatewayImpl(apiClient: apiClient)
-        let chooseImageUseCase = ChooseImageUseCaseImpl(apiImagesGateway: apiImageGateway)
+        
+        let realm = try! Realm()
+        let localImagesGateway = LocalPersistenceImagesGatewayImpl(realm: realm)
+        let cacheImagesGateway = CacheImagesGatewayImpl(apiImagesGateway: apiImageGateway,
+                                                        localPersistanceImagesGateway: localImagesGateway)
+        let chooseImageUseCase = ChooseImageUseCaseImpl(cacheImagesGateway: cacheImagesGateway)
         
         // Presenter
         let presenter = ImageDetailsPresenterImpl(view: imageDetailsViewController,

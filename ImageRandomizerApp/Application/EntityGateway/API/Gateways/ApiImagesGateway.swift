@@ -12,7 +12,7 @@ import RxSwift
 // This protocol in not necessarily needed since it doesn't include any extra methods
 // besides what BooksGateway already provides. However, if there would be any extra methods
 // on the API that we would need to support it would make sense to have an API specific gateway protocol
-protocol ApiImagesGateway: class, ImagesGateway { }
+protocol ApiImagesGateway: ImagesGateway { }
 
 class ApiImagesGatewayImpl: ApiImagesGateway {
     let apiClient: ApiClient

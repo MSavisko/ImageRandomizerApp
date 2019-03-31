@@ -22,39 +22,40 @@ enum ChooseImageError: Error {
 }
 
 class ChooseImageUseCaseImpl: ChooseImageUseCase {
-    let apiImagesGateway: ApiImagesGateway
+    let cacheImagesGateway: CacheImagesGateway
     private var disposeBag = DisposeBag()
     
-    init(apiImagesGateway: ApiImagesGateway) {
-        self.apiImagesGateway = apiImagesGateway
+    init(cacheImagesGateway: CacheImagesGateway) {
+        self.cacheImagesGateway = cacheImagesGateway
     }
     
     func chooseImage(parameters: ChooseImageParameters) -> Observable<Image> {
         return Observable<Image>
-            .create { [weak apiImagesGateway, weak disposeBag] observer in
-                guard
-                    let gateway = apiImagesGateway,
-                    let bag = disposeBag
-                else {
-                    observer.onCompleted()
-                    return Disposables.create()
+            .create { [weak self] observer in                
+                switch parameters {
+                case .random:
+                    self?.handleRandomImageChoose(observer: observer)
                 }
-                
-                gateway
-                    .fetchImages()
-                    .subscribe(onNext: { images in
-                        guard
-                            let image = images.randomElement()
-                        else {
-                            observer.onError(ChooseImageError.noImageFound)
-                            observer.onCompleted()
-                            return
-                        }
-                        observer.onNext(image)
-                        observer.onCompleted()
-                    }).disposed(by: bag)
                 
                 return Disposables.create()
         }
+    }
+    
+    private func handleRandomImageChoose(observer: AnyObserver<Image>) {
+        cacheImagesGateway.fetchImages()
+            .subscribe(onNext: { images in
+                guard
+                    let image = images.randomElement()
+                else {
+                    observer.onError(ChooseImageError.noImageFound)
+                    observer.onCompleted()
+                    return
+                }
+                observer.onNext(image)
+                observer.onCompleted()
+            }, onError: { error in
+                observer.onError(error)
+                observer.onCompleted()
+            }).disposed(by: disposeBag)
     }
 }
