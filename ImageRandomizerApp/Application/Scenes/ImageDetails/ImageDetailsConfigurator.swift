@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 protocol ImageDetailsConfigurator {
     func configure(imageDetailsViewController: ImageDetailsViewController)
@@ -15,9 +16,14 @@ protocol ImageDetailsConfigurator {
 class ImageDetailsConfiguratorImpl: ImageDetailsConfigurator {
     func configure(imageDetailsViewController: ImageDetailsViewController) {
         // Image
+        /*
         let absoluteImageUrlString = "https://volleycountry.com/wp-content/uploads/2017/11/volleyball-england-popular.jpg"
-        let image = Image(name: "", imageURL: URL(string: absoluteImageUrlString),
+        let image = Image(imageId: UUID().uuidString,
+                          name: "",
+                          imageURL: URL(string: absoluteImageUrlString),
                           ratio: 1.499)
+        */
+        let image = Image.empty
         
         // Router
         let router = ImageDetailsRouterImpl(imageDetailsViewController: imageDetailsViewController)
@@ -25,20 +31,30 @@ class ImageDetailsConfiguratorImpl: ImageDetailsConfigurator {
         // Date
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/yyyy HH:mm"
-        let dateProvider = DateProviderImpl(dateFormatter: dateFormatter)
+        let dateProvider = LocalDateGatewayImpl(dateFormatter: dateFormatter)
         
-        // Use Case
+        // Choose Image Use Case
         let apiClient = ApiClientImpl(urlSessionConfiguration: .default,
                                       completionHandlerQueue: .main)
         let apiImageGateway = ApiImagesGatewayImpl(apiClient: apiClient)
-        let chooseImageUseCase = ChooseImageUseCaseImpl(apiImagesGateway: apiImageGateway)
+        
+        let realm = try! Realm()
+        let localImagesGateway = LocalPersistenceImagesGatewayImpl(realm: realm)
+        let cacheImagesGateway = CacheImagesGatewayImpl(apiImagesGateway: apiImageGateway,
+                                                        localPersistanceImagesGateway: localImagesGateway)
+        let chooseImageUseCase = ChooseImageUseCaseImpl(cacheImagesGateway: cacheImagesGateway,
+                                                        localPersistanceImagesGateway: localImagesGateway)
+        
+        // Update Image Use Case
+        let updateImageUseCase = UpdateImageUseCaseImpl(localPersistenceImagesGateway: localImagesGateway)
         
         // Presenter
         let presenter = ImageDetailsPresenterImpl(view: imageDetailsViewController,
                                                   router: router,
                                                   image: image,
                                                   dateProvider: dateProvider,
-                                                  chooseImageUseCase: chooseImageUseCase)
+                                                  chooseImageUseCase: chooseImageUseCase,
+                                                  updateImageUseCase: updateImageUseCase)
         imageDetailsViewController.presenter = presenter
     }
 }

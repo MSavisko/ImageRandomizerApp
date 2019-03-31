@@ -15,46 +15,64 @@ protocol ChooseImageUseCase {
 
 enum ChooseImageParameters: Equatable {
     case random
+    case latest
 }
 
 enum ChooseImageError: Error {
-    case noImagaFound
+    case noImageFound
 }
 
 class ChooseImageUseCaseImpl: ChooseImageUseCase {
-    let apiImagesGateway: ApiImagesGateway
+    private let cacheImagesGateway: CacheImagesGateway
+    private let localPersistanceImagesGateway: LocalPersistenceImagesGateway
     private var disposeBag = DisposeBag()
     
-    init(apiImagesGateway: ApiImagesGateway) {
-        self.apiImagesGateway = apiImagesGateway
+    init(cacheImagesGateway: CacheImagesGateway,
+         localPersistanceImagesGateway: LocalPersistenceImagesGateway) {
+        self.cacheImagesGateway = cacheImagesGateway
+        self.localPersistanceImagesGateway = localPersistanceImagesGateway
     }
     
     func chooseImage(parameters: ChooseImageParameters) -> Observable<Image> {
         return Observable<Image>
-            .create { [weak apiImagesGateway, weak disposeBag] observer in
-                guard
-                    let gateway = apiImagesGateway,
-                    let bag = disposeBag
-                else {
-                    observer.onCompleted()
-                    return Disposables.create()
+            .create { [weak self] observer in                
+                switch parameters {
+                case .random:
+                    self?.handleRandomImageChoose(with: observer)
+                case .latest:
+                    self?.handleLatestImageChoose(with: observer)
                 }
-                
-                gateway
-                    .fetchImages()
-                    .subscribe(onNext: { images in
-                        guard
-                            let image = images.randomElement()
-                        else {
-                            observer.onError(ChooseImageError.noImagaFound)
-                            observer.onCompleted()
-                            return
-                        }
-                        observer.onNext(image)
-                        observer.onCompleted()
-                    }).disposed(by: bag)
                 
                 return Disposables.create()
         }
+    }
+    
+    private func handleRandomImageChoose(with observer: AnyObserver<Image>) {
+        cacheImagesGateway.fetchImages()
+            .subscribe(onNext: { images in
+                guard
+                    let image = images.randomElement()
+                else {
+                    observer.onError(ChooseImageError.noImageFound)
+                    observer.onCompleted()
+                    return
+                }
+                observer.onNext(image)
+                observer.onCompleted()
+            }, onError: { error in
+                observer.onError(error)
+                observer.onCompleted()
+            }).disposed(by: disposeBag)
+    }
+    
+    private func handleLatestImageChoose(with observer: AnyObserver<Image>) {
+        localPersistanceImagesGateway
+            .fetchLatestImage()
+            .subscribe(onNext: { image in
+                observer.onNext(image)
+                observer.onCompleted()
+            }, onError: { [weak self] error in
+                self?.handleRandomImageChoose(with: observer)
+            }).disposed(by: disposeBag)
     }
 }

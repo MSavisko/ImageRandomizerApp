@@ -9,10 +9,12 @@
 import Foundation
 
 struct ApiImage: Codable {
+    let imageId: String
     let ratio: Double
     let imageUrl: String
     
     enum CodingKeys: String, CodingKey {
+        case imageId = "image_id"
         case ratio
         case imageUrl = "image_url"
     }
@@ -20,7 +22,8 @@ struct ApiImage: Codable {
 
 extension ApiImage {
     var image: Image {
-        return Image(name: "",
+        return Image(imageId: imageId,
+                     name: "",
                      imageURL: URL(string: imageUrl),
                      ratio: ratio)
     }

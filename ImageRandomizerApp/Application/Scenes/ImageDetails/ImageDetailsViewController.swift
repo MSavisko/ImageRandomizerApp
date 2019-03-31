@@ -49,7 +49,8 @@ extension ImageDetailsViewController: ImageDetailsView {
         
         nameTextField.rx
             .controlEvent([.editingDidEndOnExit])
-            .subscribe(onNext: { [weak self] _ in
+            .asDriver()
+            .drive(onNext: { [weak self] _ in
                 self?.presenter?
                     .endEditingImageName(text: self?.nameTextField.text)
             })
@@ -59,27 +60,32 @@ extension ImageDetailsViewController: ImageDetailsView {
             .tapGesture()
             .when(.recognized)
             .subscribe(onNext: { [weak self] _ in
-                self?.presenter?.pressedView()
+                self?.presenter?.pressedView(text: self?.nameTextField.text)
             }).disposed(by: disposeBag)
         
         bottomButton.rx
             .controlEvent([.touchUpInside])
-            .subscribe(onNext: { [weak self] in
+            .asDriver()
+            .throttle(1.0, latest: true)
+            .drive(onNext: { [weak self] _ in
                 self?.presenter?.pressedBottomButton()
             }).disposed(by: disposeBag)
         
         upperButton.rx
             .controlEvent([.touchUpInside])
-            .subscribe(onNext: { [weak self] _ in
+            .asDriver()
+            .throttle(1.0, latest: true)
+            .drive(onNext: { [weak self] _ in
                 self?.presenter?.pressedUpperButton()
             }).disposed(by: disposeBag)
     }
     
     func display(image: Image) {
         imageView.setImage(url: image.imageURL,
-                           isIndicatorExist: true)
+                           isIndicatorExist: false)
             .subscribe(onNext: { isLoaded in })
             .disposed(by: disposeBag)
+        nameTextField.text = image.name
     }
     
     func display(upperButtonTitle: String) {
@@ -99,7 +105,9 @@ extension ImageDetailsViewController: ImageDetailsView {
         }
         button.rx
             .tap
-            .subscribe(onNext: { [weak self] in
+            .asDriver()
+            .throttle(1.0, latest: true)
+            .drive(onNext: { [weak self] in
                 self?.presenter?.pressedRightBarItem()
             })
             .disposed(by: disposeBag)
