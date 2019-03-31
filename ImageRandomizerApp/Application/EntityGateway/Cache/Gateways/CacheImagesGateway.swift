@@ -22,6 +22,10 @@ class CacheImagesGatewayImpl: CacheImagesGateway {
         self.localPersistanceImagesGateway = localPersistanceImagesGateway
     }
     
+    /// Fetch images from cache storage.
+    /// If images does not exist, fetch it from api and save to cache.
+    ///
+    /// - Returns: Observer with images
     func fetchImages() -> Observable<[Image]> {
         return Observable<[Image]>
             .create { [weak self] observer in
@@ -38,6 +42,10 @@ class CacheImagesGatewayImpl: CacheImagesGateway {
                             this.apiImagesGateway
                                 .fetchImages()
                                 .subscribe(onNext: { images in
+                                    this.localPersistanceImagesGateway
+                                        .add(images: images)
+                                        .subscribe()
+                                        .disposed(by: this.disposeBag)
                                     observer.onNext(images)
                                     observer.onCompleted()
                                 }, onError: { error in
