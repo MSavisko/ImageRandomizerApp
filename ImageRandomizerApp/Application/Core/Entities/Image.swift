@@ -14,3 +14,12 @@ struct Image: Equatable {
     let imageURL: URL?
     let ratio: Double
 }
+
+extension Image {
+    static var empty: Image {
+        return Image.init(imageId: "",
+                          name: "",
+                          imageURL: nil,
+                          ratio: 0.0)
+    }
+}

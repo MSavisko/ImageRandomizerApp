@@ -25,7 +25,7 @@ class RealmImage: Object {
 extension RealmImage {
     var image: Image {
         return Image(imageId: imageId,
-                     name: "",
+                     name: name,
                      imageURL: URL(string: imageUrl),
                      ratio: ratio)
     }

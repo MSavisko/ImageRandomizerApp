@@ -71,9 +71,8 @@ class ChooseImageUseCaseImpl: ChooseImageUseCase {
             .subscribe(onNext: { image in
                 observer.onNext(image)
                 observer.onCompleted()
-            }, onError: { error in
-                observer.onError(ChooseImageError.noImageFound)
-                observer.onCompleted()
+            }, onError: { [weak self] error in
+                self?.handleRandomImageChoose(with: observer)
             }).disposed(by: disposeBag)
     }
 }

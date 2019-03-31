@@ -107,10 +107,9 @@ class LocalPersistenceImagesGatewayImpl: LocalPersistenceImagesGateway {
                     return .error(LocalPersistenceError.emptyResult)
                 }
                 
-                realmImage.populate(with: parameters)
-                
                 if parameters.hasChanges {
                     try realm.write {
+                        realmImage.populate(with: parameters)
                         realm.add(realmImage, update: true)
                     }
                 }

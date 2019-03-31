@@ -13,7 +13,7 @@ protocol ImageDetailsPresenter: class {
     func viewDidLoad()
     func endEditingImageName(text: String?)
     func pressedRightBarItem()
-    func pressedView()
+    func pressedView(text: String?)
     func pressedBottomButton()
     func pressedUpperButton()
 }
@@ -24,6 +24,7 @@ class ImageDetailsPresenterImpl: ImageDetailsPresenter {
     private var router: ImageDetailsRouter
     private let dateProvider: DateGateway
     private let chooseImageUseCase: ChooseImageUseCase
+    private let updateImageUseCase: UpdateImageUseCase
     
     private var disposeBag = DisposeBag()
     
@@ -31,17 +32,20 @@ class ImageDetailsPresenterImpl: ImageDetailsPresenter {
          router: ImageDetailsRouter,
          image: Image,
          dateProvider: DateGateway,
-         chooseImageUseCase: ChooseImageUseCase) {
+         chooseImageUseCase: ChooseImageUseCase,
+         updateImageUseCase: UpdateImageUseCase) {
         self.view = view
         self.router = router
         self.image = image
         self.dateProvider = dateProvider
         self.chooseImageUseCase = chooseImageUseCase
+        self.updateImageUseCase = updateImageUseCase
     }
     
     // MARK: ImageDetailsPresenter
     func viewDidLoad() {
         view?.setup()
+        chooseLatestImage()
         view?.display(image: image)
         view?.display(upperButtonTitle: "Select")
         view?.display(bottomButtonTitle: "Random")
@@ -49,7 +53,13 @@ class ImageDetailsPresenterImpl: ImageDetailsPresenter {
     }
     
     func endEditingImageName(text: String?) {
-        image.name = text ?? ""
+        updateImageUseCase
+            .update(image: image,
+                    parameters: .init(name: text,
+                                      isLatest: true))
+            .subscribe(onNext: { [weak self] image in
+                self?.image = image
+            }).disposed(by: disposeBag)
     }
     
     func pressedRightBarItem() {
@@ -67,29 +77,44 @@ class ImageDetailsPresenterImpl: ImageDetailsPresenter {
             .disposed(by: disposeBag)
     }
     
-    func pressedView() {
+    func pressedView(text: String?) {
         view?.endEditing()
+        endEditingImageName(text: text)
     }
     
     func pressedBottomButton() {
         chooseImageUseCase
             .chooseImage(parameters: .random)
             .subscribe(onNext: { [weak self] image in
+                self?.image = image
                 self?.view?.display(image: image)
             }, onError: { [weak self] error in
-                guard let this = self else {
-                    return
-                }
-                this.router
-                    .presentAlert(title: "Error",
-                                  subtitle: error.localizedDescription,
-                                  confirmTitle: "OK")
-                    .subscribe(onNext: { _ in })
-                    .disposed(by: this.disposeBag)
+                self?.handleAppearing(error)
             }).disposed(by: disposeBag)
     }
     
     func pressedUpperButton() {
         router.showImagesList()
+    }
+    
+    // MARK: Handlers
+    private func chooseLatestImage() {
+        chooseImageUseCase
+            .chooseImage(parameters: .latest)
+            .subscribe(onNext: { [weak self] image in
+                self?.image = image
+                self?.view?.display(image: image)
+            }, onError: { [weak self] error in
+                self?.handleAppearing(error)
+            }).disposed(by: disposeBag)
+    }
+    
+    private func handleAppearing(_ error: Error) {
+        router
+            .presentAlert(title: "Error",
+                          subtitle: error.localizedDescription,
+                          confirmTitle: "OK")
+            .subscribe(onNext: { _ in })
+            .disposed(by: disposeBag)
     }
 }
