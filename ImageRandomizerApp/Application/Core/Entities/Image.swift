@@ -9,6 +9,7 @@
 import Foundation
 
 struct Image: Equatable {
+    let imageId: String
     var name: String
     let imageURL: URL?
     let ratio: Double

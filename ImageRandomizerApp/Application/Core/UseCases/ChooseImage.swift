@@ -18,7 +18,7 @@ enum ChooseImageParameters: Equatable {
 }
 
 enum ChooseImageError: Error {
-    case noImagaFound
+    case noImageFound
 }
 
 class ChooseImageUseCaseImpl: ChooseImageUseCase {
@@ -46,7 +46,7 @@ class ChooseImageUseCaseImpl: ChooseImageUseCase {
                         guard
                             let image = images.randomElement()
                         else {
-                            observer.onError(ChooseImageError.noImagaFound)
+                            observer.onError(ChooseImageError.noImageFound)
                             observer.onCompleted()
                             return
                         }

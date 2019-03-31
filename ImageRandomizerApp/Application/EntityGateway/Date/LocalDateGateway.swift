@@ -1,5 +1,5 @@
 //
-//  DateProvider.swift
+//  LocalDateGateway.swift
 //  ImageRandomizerApp
 //
 //  Created by Maksym Savisko on 3/30/19.
@@ -8,12 +8,9 @@
 
 import Foundation
 
-protocol DateProvider {
-    func currentDate() -> Date
-    func formattedStringCurrentDate() -> String
-}
+protocol LocalDateGateway: DateGateway {}
 
-class DateProviderImpl: DateProvider {
+class LocalDateGatewayImpl: LocalDateGateway {
     private let dateFormatter: DateFormatter
     
     init(dateFormatter: DateFormatter) {

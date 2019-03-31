@@ -22,7 +22,7 @@ class ImageDetailsPresenterImpl: ImageDetailsPresenter {
     private weak var view: ImageDetailsView?
     private var image: Image
     private var router: ImageDetailsRouter
-    private let dateProvider: DateProvider
+    private let dateProvider: DateGateway
     private let chooseImageUseCase: ChooseImageUseCase
     
     private var disposeBag = DisposeBag()
@@ -30,7 +30,7 @@ class ImageDetailsPresenterImpl: ImageDetailsPresenter {
     init(view: ImageDetailsView,
          router: ImageDetailsRouter,
          image: Image,
-         dateProvider: DateProvider,
+         dateProvider: DateGateway,
          chooseImageUseCase: ChooseImageUseCase) {
         self.view = view
         self.router = router
