@@ -15,6 +15,7 @@ protocol ChooseImageUseCase {
 
 enum ChooseImageParameters: Equatable {
     case random
+    case latest
 }
 
 enum ChooseImageError: Error {
@@ -22,11 +23,14 @@ enum ChooseImageError: Error {
 }
 
 class ChooseImageUseCaseImpl: ChooseImageUseCase {
-    let cacheImagesGateway: CacheImagesGateway
+    private let cacheImagesGateway: CacheImagesGateway
+    private let localPersistanceImagesGateway: LocalPersistenceImagesGateway
     private var disposeBag = DisposeBag()
     
-    init(cacheImagesGateway: CacheImagesGateway) {
+    init(cacheImagesGateway: CacheImagesGateway,
+         localPersistanceImagesGateway: LocalPersistenceImagesGateway) {
         self.cacheImagesGateway = cacheImagesGateway
+        self.localPersistanceImagesGateway = localPersistanceImagesGateway
     }
     
     func chooseImage(parameters: ChooseImageParameters) -> Observable<Image> {
@@ -34,14 +38,16 @@ class ChooseImageUseCaseImpl: ChooseImageUseCase {
             .create { [weak self] observer in                
                 switch parameters {
                 case .random:
-                    self?.handleRandomImageChoose(observer: observer)
+                    self?.handleRandomImageChoose(with: observer)
+                case .latest:
+                    self?.handleLatestImageChoose(with: observer)
                 }
                 
                 return Disposables.create()
         }
     }
     
-    private func handleRandomImageChoose(observer: AnyObserver<Image>) {
+    private func handleRandomImageChoose(with observer: AnyObserver<Image>) {
         cacheImagesGateway.fetchImages()
             .subscribe(onNext: { images in
                 guard
@@ -55,6 +61,18 @@ class ChooseImageUseCaseImpl: ChooseImageUseCase {
                 observer.onCompleted()
             }, onError: { error in
                 observer.onError(error)
+                observer.onCompleted()
+            }).disposed(by: disposeBag)
+    }
+    
+    private func handleLatestImageChoose(with observer: AnyObserver<Image>) {
+        localPersistanceImagesGateway
+            .fetchLatestImage()
+            .subscribe(onNext: { image in
+                observer.onNext(image)
+                observer.onCompleted()
+            }, onError: { error in
+                observer.onError(ChooseImageError.noImageFound)
                 observer.onCompleted()
             }).disposed(by: disposeBag)
     }

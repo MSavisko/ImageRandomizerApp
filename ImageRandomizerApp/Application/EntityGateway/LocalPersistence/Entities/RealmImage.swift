@@ -15,6 +15,7 @@ class RealmImage: Object {
     @objc dynamic var imageUrl: String = ""
     @objc dynamic var updatedAt: Date = Date()
     @objc dynamic var ratio: Double = 1.0
+    @objc dynamic var isLatest: Bool = false
     
     override class func primaryKey() -> String? {
         return "imageId"
@@ -35,5 +36,15 @@ extension RealmImage {
         imageUrl = image.imageURL?.absoluteString ?? ""
         updatedAt = Date()
         ratio = image.ratio
+    }
+    
+    func populate(with parameters: UpdateImageParameters) {
+        if let newName = parameters.name {
+            name = newName
+        }
+        
+        if let newIsLatest = parameters.isLatest {
+            isLatest = newIsLatest
+        }
     }
 }

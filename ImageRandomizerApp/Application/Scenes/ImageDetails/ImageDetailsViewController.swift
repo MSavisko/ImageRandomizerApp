@@ -77,7 +77,7 @@ extension ImageDetailsViewController: ImageDetailsView {
     
     func display(image: Image) {
         imageView.setImage(url: image.imageURL,
-                           isIndicatorExist: true)
+                           isIndicatorExist: false)
             .subscribe(onNext: { isLoaded in })
             .disposed(by: disposeBag)
     }

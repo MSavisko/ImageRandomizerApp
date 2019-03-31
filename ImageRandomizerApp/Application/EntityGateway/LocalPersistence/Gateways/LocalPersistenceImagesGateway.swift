@@ -12,8 +12,11 @@ import RxRealm
 import RxSwift
 
 protocol LocalPersistenceImagesGateway: ImagesGateway {
-    func update(image: Image, name: String) -> Observable<Image>
+    //func update(image: Image, name: String) -> Observable<Image>
+    func update(image: Image, parameters: UpdateImageParameters)
+        -> Observable<Image>
     func add(images: [Image]) -> Observable<[Image]>
+    func fetchLatestImage() -> Observable<Image>
 }
 
 protocol RealmDescribing: class {
@@ -25,7 +28,7 @@ protocol RealmDescribing: class {
 extension Realm: RealmDescribing {}
 
 enum LocalPersistenceError: Error {
-    case couldnotWrite
+    case couldNotWrite
     case couldnotRead
     case emptyResult
 }
@@ -61,6 +64,7 @@ class LocalPersistenceImagesGatewayImpl: LocalPersistenceImagesGateway {
     }
     
     // MARK: LocalPersistenceImagesGateway
+    /*
     func update(image: Image, name: String) -> Observable<Image> {
         let result = withRealm("getting image by id") { realm
             -> Observable<RealmImage> in
@@ -87,6 +91,39 @@ class LocalPersistenceImagesGatewayImpl: LocalPersistenceImagesGateway {
         
         return observableRealmImage.map { $0.image }
     }
+    */
+    
+    func update(image: Image, parameters: UpdateImageParameters)
+        -> Observable<Image> {
+            let result = withRealm("getting image by id") { realm
+                -> Observable<RealmImage> in
+                let image = realm
+                    .objects(RealmImage.self)
+                    .filter("imageId == %@", image.imageId).first
+                
+                guard
+                    let realmImage = image
+                else {
+                    return .error(LocalPersistenceError.emptyResult)
+                }
+                
+                realmImage.populate(with: parameters)
+                
+                if parameters.hasChanges {
+                    try realm.write {
+                        realm.add(realmImage, update: true)
+                    }
+                }
+                
+                return Observable.from(object: realmImage)
+            }
+            
+            guard let observableRealmImage = result else {
+                return .error(LocalPersistenceError.couldnotRead)
+            }
+            
+            return observableRealmImage.map { $0.image }
+    }
     
     func add(images: [Image]) -> Observable<[Image]> {
         let result = withRealm("add or update") { realm
@@ -110,11 +147,30 @@ class LocalPersistenceImagesGatewayImpl: LocalPersistenceImagesGateway {
         }
         
         guard let observableRealmImages = result else {
-            return .error(LocalPersistenceError.couldnotWrite)
+            return .error(LocalPersistenceError.couldNotWrite)
         }
         
         return observableRealmImages
             .map { $0.map { $0.image } }
     }
     
+    func fetchLatestImage() -> Observable<Image> {
+        let result = withRealm("fetch latest image") { realm
+            -> Observable<RealmImage> in
+            let realmImage = realm
+                .objects(RealmImage.self)
+                .filter("isLatest == %@", NSNumber(booleanLiteral: true))
+                .first
+            guard let validRealmImage = realmImage else {
+                return .error(LocalPersistenceError.emptyResult)
+            }
+            return Observable.from(object: validRealmImage)
+        }
+        
+        guard let observableRealmImage = result else {
+            return .error(LocalPersistenceError.couldNotWrite)
+        }
+        
+        return observableRealmImage.map { $0.image }
+    }
 }

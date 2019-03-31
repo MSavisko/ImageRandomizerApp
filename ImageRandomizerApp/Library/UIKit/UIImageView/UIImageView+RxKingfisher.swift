@@ -15,7 +15,7 @@ public extension UIImageView {
     public func setImage(url: URL?,
                          placeholder: UIImage? = nil,
                          isIndicatorExist: Bool = false,
-                         fadeDuration: Double = 0.8) -> Observable<Bool> {
+                         fadeDuration: Double = 0.4) -> Observable<Bool> {
         return Observable.create { observer in
             guard let imageUrl = url else {
                 observer.on(.next(false))

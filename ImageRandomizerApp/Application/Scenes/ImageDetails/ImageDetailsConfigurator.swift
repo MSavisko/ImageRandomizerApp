@@ -39,7 +39,8 @@ class ImageDetailsConfiguratorImpl: ImageDetailsConfigurator {
         let localImagesGateway = LocalPersistenceImagesGatewayImpl(realm: realm)
         let cacheImagesGateway = CacheImagesGatewayImpl(apiImagesGateway: apiImageGateway,
                                                         localPersistanceImagesGateway: localImagesGateway)
-        let chooseImageUseCase = ChooseImageUseCaseImpl(cacheImagesGateway: cacheImagesGateway)
+        let chooseImageUseCase = ChooseImageUseCaseImpl(cacheImagesGateway: cacheImagesGateway,
+                                                        localPersistanceImagesGateway: localImagesGateway)
         
         // Presenter
         let presenter = ImageDetailsPresenterImpl(view: imageDetailsViewController,
