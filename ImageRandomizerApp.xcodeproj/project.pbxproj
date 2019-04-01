@@ -13,6 +13,7 @@
 		9257F80122527361007AE74D /* UIColor+hexRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9257F80022527361007AE74D /* UIColor+hexRGB.swift */; };
 		9257F8042252A9FF007AE74D /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9257F8032252A9FF007AE74D /* ImageTableViewCell.swift */; };
 		9257F8062252AA2A007AE74D /* ImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9257F8052252AA2A007AE74D /* ImageTableViewCell.xib */; };
+		9257F80A2252C1C9007AE74D /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9257F8092252C1C9007AE74D /* R.generated.swift */; };
 		925B6DA7224E99380047FAE8 /* UIImageView+RxKingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B6DA6224E99380047FAE8 /* UIImageView+RxKingfisher.swift */; };
 		925B6DAA224EA3830047FAE8 /* UIViewController+Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B6DA9224EA3830047FAE8 /* UIViewController+Load.swift */; };
 		925B6DAF224FAE9F0047FAE8 /* ImageDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B6DAE224FAE9F0047FAE8 /* ImageDetailsRouter.swift */; };
@@ -24,7 +25,7 @@
 		925B6DC1224FE2C80047FAE8 /* ImagesGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B6DC0224FE2C80047FAE8 /* ImagesGateway.swift */; };
 		925B6DC4224FE4630047FAE8 /* ApiImagesGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B6DC3224FE4630047FAE8 /* ApiImagesGateway.swift */; };
 		925B6DC6225018340047FAE8 /* ApiImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B6DC5225018340047FAE8 /* ApiImages.swift */; };
-		925B6DC82250FC4F0047FAE8 /* DisplayImagesListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B6DC72250FC4F0047FAE8 /* DisplayImagesListUseCase.swift */; };
+		925B6DC82250FC4F0047FAE8 /* DisplayImagesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B6DC72250FC4F0047FAE8 /* DisplayImagesList.swift */; };
 		925B6DCC2250FD9F0047FAE8 /* RealmImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B6DCB2250FD9F0047FAE8 /* RealmImage.swift */; };
 		925B6DCF2250FED80047FAE8 /* LocalPersistenceImagesGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B6DCE2250FED80047FAE8 /* LocalPersistenceImagesGateway.swift */; };
 		925B6DD22251173C0047FAE8 /* DateGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B6DD12251173C0047FAE8 /* DateGateway.swift */; };
@@ -79,6 +80,7 @@
 		9257F80022527361007AE74D /* UIColor+hexRGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hexRGB.swift"; sourceTree = "<group>"; };
 		9257F8032252A9FF007AE74D /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
 		9257F8052252AA2A007AE74D /* ImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTableViewCell.xib; sourceTree = "<group>"; };
+		9257F8092252C1C9007AE74D /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		925B6DA6224E99380047FAE8 /* UIImageView+RxKingfisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+RxKingfisher.swift"; sourceTree = "<group>"; };
 		925B6DA9224EA3830047FAE8 /* UIViewController+Load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Load.swift"; sourceTree = "<group>"; };
 		925B6DAE224FAE9F0047FAE8 /* ImageDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsRouter.swift; sourceTree = "<group>"; };
@@ -90,7 +92,7 @@
 		925B6DC0224FE2C80047FAE8 /* ImagesGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesGateway.swift; sourceTree = "<group>"; };
 		925B6DC3224FE4630047FAE8 /* ApiImagesGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiImagesGateway.swift; sourceTree = "<group>"; };
 		925B6DC5225018340047FAE8 /* ApiImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiImages.swift; sourceTree = "<group>"; };
-		925B6DC72250FC4F0047FAE8 /* DisplayImagesListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayImagesListUseCase.swift; sourceTree = "<group>"; };
+		925B6DC72250FC4F0047FAE8 /* DisplayImagesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayImagesList.swift; sourceTree = "<group>"; };
 		925B6DCB2250FD9F0047FAE8 /* RealmImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmImage.swift; sourceTree = "<group>"; };
 		925B6DCE2250FED80047FAE8 /* LocalPersistenceImagesGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalPersistenceImagesGateway.swift; sourceTree = "<group>"; };
 		925B6DD12251173C0047FAE8 /* DateGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateGateway.swift; sourceTree = "<group>"; };
@@ -172,6 +174,14 @@
 			path = UIColor;
 			sourceTree = "<group>";
 		};
+		9257F8072252BDB5007AE74D /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				9257F8092252C1C9007AE74D /* R.generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		925B6DA2224E987F0047FAE8 /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -211,7 +221,7 @@
 			children = (
 				925B6DB4224FDA0E0047FAE8 /* ChooseImage.swift */,
 				925B6DDE225135E00047FAE8 /* UpdateImage.swift */,
-				925B6DC72250FC4F0047FAE8 /* DisplayImagesListUseCase.swift */,
+				925B6DC72250FC4F0047FAE8 /* DisplayImagesList.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -230,6 +240,7 @@
 		925B6DAD224F88480047FAE8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9257F8072252BDB5007AE74D /* Generated */,
 				92D54692224BF58D00AD75E7 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -359,7 +370,6 @@
 		92BEE876224C0F2A003BF17F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				92BEE879224C0F5B003BF17F /* Main */,
 				92BEE878224C0F44003BF17F /* ImagesList */,
 				92BEE877224C0F34003BF17F /* ImageDetails */,
 			);
@@ -390,13 +400,6 @@
 				9257F8052252AA2A007AE74D /* ImageTableViewCell.xib */,
 			);
 			path = ImagesList;
-			sourceTree = "<group>";
-		};
-		92BEE879224C0F5B003BF17F /* Main */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 		92BEE87C224C1218003BF17F /* Core */ = {
@@ -490,6 +493,7 @@
 			buildConfigurationList = 92D546B0224BF58D00AD75E7 /* Build configuration list for PBXNativeTarget "ImageRandomizerApp" */;
 			buildPhases = (
 				219988E51871CB9FBC9A6EB2 /* [CP] Check Pods Manifest.lock */,
+				9257F8082252BDE8007AE74D /* Generate Resource Identifiers via R.swift */,
 				92D54684224BF58C00AD75E7 /* Sources */,
 				92D54685224BF58C00AD75E7 /* Frameworks */,
 				92D54686224BF58C00AD75E7 /* Resources */,
@@ -660,6 +664,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9257F8082252BDE8007AE74D /* Generate Resource Identifiers via R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = "Generate Resource Identifiers via R.swift";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/ImageRandomizerApp/Resources/Generated/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/ImageRandomizerApp/Resources/Generated/R.generated.swift\"\n";
+		};
 		C8BDE0C18E8AB813585E559D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -692,6 +716,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ImageRandomizerApp/Pods-ImageRandomizerApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
@@ -705,6 +730,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
@@ -727,6 +753,7 @@
 			files = (
 				925B6DBE224FE1580047FAE8 /* ImagesApiRequest.swift in Sources */,
 				925B6DE722516F440047FAE8 /* ImagesListRouter.swift in Sources */,
+				9257F80A2252C1C9007AE74D /* R.generated.swift in Sources */,
 				925B6DE122516E690047FAE8 /* ImagesListViewController.swift in Sources */,
 				92BEE87B224C1047003BF17F /* ImageDetailsViewController.swift in Sources */,
 				925B6DE922516F830047FAE8 /* ImagesListConfigurator.swift in Sources */,
@@ -746,7 +773,7 @@
 				925B6DB3224FC9EF0047FAE8 /* LocalDateGateway.swift in Sources */,
 				925B6DC1224FE2C80047FAE8 /* ImagesGateway.swift in Sources */,
 				929EA655224C2243005910F9 /* ImageDetailsConfigurator.swift in Sources */,
-				925B6DC82250FC4F0047FAE8 /* DisplayImagesListUseCase.swift in Sources */,
+				925B6DC82250FC4F0047FAE8 /* DisplayImagesList.swift in Sources */,
 				925B6DB5224FDA0E0047FAE8 /* ChooseImage.swift in Sources */,
 				925B6DDF225135E00047FAE8 /* UpdateImage.swift in Sources */,
 				925B6DAA224EA3830047FAE8 /* UIViewController+Load.swift in Sources */,

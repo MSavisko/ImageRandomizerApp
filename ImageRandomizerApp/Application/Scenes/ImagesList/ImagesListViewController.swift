@@ -41,9 +41,9 @@ class ImagesListViewController: UIViewController, ImagesListView {
     func setup() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib(nibName: "ImageTableViewCell", bundle: nil),
-                           forCellReuseIdentifier: "ImageTableViewCell")
-        tableView.backgroundColor = UIColor(named: "light-grey")
+        tableView.register(UINib(resource: R.nib.imageTableViewCell),
+                           forCellReuseIdentifier: R.reuseIdentifier.imageTableViewCell.identifier)
+        tableView.backgroundColor = R.color.lightGrey()
     }
     
     func display(navigationTitle: String) {
@@ -79,11 +79,15 @@ extension ImagesListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ImageTableViewCell",
-                                                 for: indexPath)
-            as! ImageTableViewCell
-        presenter?.configure(cell: cell, forRow: indexPath.row)
-        return cell
+        if let cell = tableView
+            .dequeueReusableCell(withIdentifier: R.reuseIdentifier.imageTableViewCell,
+                                 for: indexPath) {
+            presenter?.configure(cell: cell, forRow: indexPath.row)
+            return cell
+        }
+        
+        assertionFailure("Could not dequeue reusable ImageTableViewCell")
+        return UITableViewCell()
     }
 }
 
@@ -96,6 +100,6 @@ extension ImagesListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView,
                    heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 160.0
+        return presenter?.itemHeight ?? 0.0
     }
 }

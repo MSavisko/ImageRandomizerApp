@@ -37,7 +37,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MQK-ib-JST">
-                                <rect key="frame" x="199" y="23" width="44" height="109.5"/>
+                                <rect key="frame" x="207" y="23" width="44" height="109.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.40000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -50,9 +50,9 @@
                             <constraint firstItem="Zng-Is-Ae8" firstAttribute="centerY" secondItem="qfm-bg-EcG" secondAttribute="centerY" id="NxG-PS-wqg"/>
                             <constraint firstItem="Zng-Is-Ae8" firstAttribute="leading" secondItem="qrd-QL-Hln" secondAttribute="leading" constant="8" id="asK-mW-dev"/>
                             <constraint firstItem="qfm-bg-EcG" firstAttribute="centerY" secondItem="qrd-QL-Hln" secondAttribute="centerY" id="qJO-g6-OIT"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MQK-ib-JST" secondAttribute="trailing" constant="8" id="r3R-CZ-Fi2"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MQK-ib-JST" secondAttribute="trailing" constant="16" id="r3R-CZ-Fi2"/>
                             <constraint firstItem="MQK-ib-JST" firstAttribute="bottom" secondItem="qfm-bg-EcG" secondAttribute="bottom" id="vIh-wN-HK4"/>
-                            <constraint firstItem="MQK-ib-JST" firstAttribute="leading" secondItem="qfm-bg-EcG" secondAttribute="trailing" constant="8" id="wXR-w0-tu9"/>
+                            <constraint firstItem="MQK-ib-JST" firstAttribute="leading" secondItem="qfm-bg-EcG" secondAttribute="trailing" constant="16" id="wXR-w0-tu9"/>
                         </constraints>
                     </view>
                 </subviews>

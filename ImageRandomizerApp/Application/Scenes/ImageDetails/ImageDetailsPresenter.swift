@@ -52,14 +52,15 @@ class ImageDetailsPresenterImpl: ImageDetailsPresenter {
         view?.display(image: image)
         view?.display(upperButtonTitle: "SELECT")
         view?.display(bottomButtonTitle: "RANDOM")
-        view?.displayInfoIcon(name: "info-icon")
+        view?.displayInfoIcon(name: R.image.infoIcon.name)
     }
     
     func viewWillAppear() {
-        view?.displayNavigationBar(colorName: "light-grey")
-        view?.displayNavigationBarTitle(colorName: "light-black",
+        view?.displayNavigationBar(colorName: R.color.lightGrey.name)
+        view?.displayNavigationBarTitle(colorName: R.color.lightBlack.name,
                                         fontSize: 20.0)
-        view?.displayBackButton(colorName: "blue")
+        view?.displayBackButton(colorName: R.color.blue.name)
+        view?.hideNavigationBarSeparator()
     }
     
     func endEditingImageName(text: String?) {

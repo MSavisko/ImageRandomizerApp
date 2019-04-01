@@ -22,6 +22,7 @@ protocol ImageDetailsView: class {
     func displayNavigationBarTitle(colorName: String,
                                    fontSize: CGFloat)
     func displayBackButton(colorName: String)
+    func hideNavigationBarSeparator()
 }
 
 class ImageDetailsViewController: UIViewController {
@@ -46,12 +47,6 @@ class ImageDetailsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         presenter?.viewWillAppear()
-        self.navigationController?
-            .navigationBar
-            .setBackgroundImage(UIImage(), for: .default)
-        self.navigationController?
-            .navigationBar
-            .shadowImage = UIImage()
     }
 }
 
@@ -124,6 +119,15 @@ extension ImageDetailsViewController: ImageDetailsView {
             .tintColor = UIColor(named: colorName)
     }
     
+    func hideNavigationBarSeparator() {
+        self.navigationController?
+            .navigationBar
+            .setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?
+            .navigationBar
+            .shadowImage = UIImage()
+    }
+    
     // MARK: Setup
     private func setupNavigationItems() {
         rightBarButton = UIBarButtonItem(image: nil,
@@ -176,6 +180,6 @@ extension ImageDetailsViewController: ImageDetailsView {
         upperButton.layer.cornerRadius = 10.0
         nameTextField.layer.cornerRadius = 10.0
         
-        nameTextField.tintColor = UIColor(named: "blue")
+        nameTextField.tintColor = R.color.blue()
     }
 }

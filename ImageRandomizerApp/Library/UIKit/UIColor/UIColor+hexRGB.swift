@@ -9,7 +9,7 @@
 import UIKit.UIColor
 
 public extension UIColor {
-    // No alpha value is taken into account
+    // No alpha value is taken
     public convenience init(hexRGB: Int) {
         let red = hexRGB >> 16
         let green = hexRGB >> 8 & 0xFF

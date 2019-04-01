@@ -17,6 +17,7 @@ protocol ImagesListPresenterDelegate: class {
 protocol ImagesListPresenter: class {
     var router: ImagesListRouter { get }
     var numberOfImages: Int { get }
+    var itemHeight: CGFloat { get }
     func viewDidLoad()
     func viewWillAppear()
     func didSelect(row: Int)
@@ -37,6 +38,10 @@ class ImagesListPresenterImpl: ImagesListPresenter {
         return images.count
     }
     
+    var itemHeight: CGFloat {
+        return 160.0
+    }
+    
     init(view: ImagesListView,
          router: ImagesListRouter,
          displayImagesListUseCase: DisplayImagesListUseCase,
@@ -50,7 +55,7 @@ class ImagesListPresenterImpl: ImagesListPresenter {
     // MARK: ImagesListPresenter
     func viewDidLoad() {
         view?.setup()
-        view?.display(navigationTitle: "LIST")
+        view?.display(navigationTitle: "List")
         displayImagesListUseCase
             .displayImages()
             .subscribe(onNext: { [weak self] images in
@@ -60,8 +65,8 @@ class ImagesListPresenterImpl: ImagesListPresenter {
     }
     
     func viewWillAppear() {
-        view?.displayNavigationBar(colorName: "light-grey")
-        view?.displayNavigationBarTitle(colorName: "light-black",
+        view?.displayNavigationBar(colorName: R.color.lightGrey.name)
+        view?.displayNavigationBarTitle(colorName: R.color.lightBlack.name,
                                         fontSize: 20.0)
     }
     
