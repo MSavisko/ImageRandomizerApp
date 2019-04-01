@@ -43,8 +43,6 @@
 		92BEE87F224C123B003BF17F /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE87E224C123B003BF17F /* Image.swift */; };
 		92BEE881224C15A8003BF17F /* ImageDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92BEE880224C15A8003BF17F /* ImageDetailsViewController.xib */; };
 		92D5468C224BF58C00AD75E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5468B224BF58C00AD75E7 /* AppDelegate.swift */; };
-		92D5468E224BF58C00AD75E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D5468D224BF58C00AD75E7 /* ViewController.swift */; };
-		92D54691224BF58C00AD75E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D5468F224BF58C00AD75E7 /* Main.storyboard */; };
 		92D54693224BF58D00AD75E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 92D54692224BF58D00AD75E7 /* Assets.xcassets */; };
 		92D54696224BF58D00AD75E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D54694224BF58D00AD75E7 /* LaunchScreen.storyboard */; };
 		92D546A1224BF58D00AD75E7 /* ImageRandomizerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D546A0224BF58D00AD75E7 /* ImageRandomizerAppTests.swift */; };
@@ -111,8 +109,6 @@
 		92BEE880224C15A8003BF17F /* ImageDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageDetailsViewController.xib; sourceTree = "<group>"; };
 		92D54688224BF58C00AD75E7 /* ImageRandomizerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageRandomizerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D5468B224BF58C00AD75E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		92D5468D224BF58C00AD75E7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		92D54690224BF58C00AD75E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		92D54692224BF58D00AD75E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		92D54695224BF58D00AD75E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		92D54697224BF58D00AD75E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -182,6 +178,13 @@
 			path = Generated;
 			sourceTree = "<group>";
 		};
+		9257F80B2252CAB7007AE74D /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		925B6DA2224E987F0047FAE8 /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -229,6 +232,7 @@
 		925B6DAC224F74F80047FAE8 /* Application */ = {
 			isa = PBXGroup;
 			children = (
+				92D5468B224BF58C00AD75E7 /* AppDelegate.swift */,
 				92BEE87C224C1218003BF17F /* Core */,
 				925B6DB0224FB9490047FAE8 /* EntityGateway */,
 				92BEE876224C0F2A003BF17F /* Scenes */,
@@ -240,7 +244,10 @@
 		925B6DAD224F88480047FAE8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9257F80B2252CAB7007AE74D /* Localization */,
 				9257F8072252BDB5007AE74D /* Generated */,
+				92D54697224BF58D00AD75E7 /* Info.plist */,
+				92D54694224BF58D00AD75E7 /* LaunchScreen.storyboard */,
 				92D54692224BF58D00AD75E7 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -448,11 +455,6 @@
 				925B6DAC224F74F80047FAE8 /* Application */,
 				925B6DA2224E987F0047FAE8 /* Library */,
 				925B6DAD224F88480047FAE8 /* Resources */,
-				92D5468B224BF58C00AD75E7 /* AppDelegate.swift */,
-				92D5468D224BF58C00AD75E7 /* ViewController.swift */,
-				92D5468F224BF58C00AD75E7 /* Main.storyboard */,
-				92D54694224BF58D00AD75E7 /* LaunchScreen.storyboard */,
-				92D54697224BF58D00AD75E7 /* Info.plist */,
 			);
 			path = ImageRandomizerApp;
 			sourceTree = "<group>";
@@ -598,7 +600,6 @@
 				92D54696224BF58D00AD75E7 /* LaunchScreen.storyboard in Resources */,
 				92D54693224BF58D00AD75E7 /* Assets.xcassets in Resources */,
 				9257F8062252AA2A007AE74D /* ImageTableViewCell.xib in Resources */,
-				92D54691224BF58C00AD75E7 /* Main.storyboard in Resources */,
 				92BEE881224C15A8003BF17F /* ImageDetailsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -766,7 +767,6 @@
 				92BEE87F224C123B003BF17F /* Image.swift in Sources */,
 				9257F80122527361007AE74D /* UIColor+hexRGB.swift in Sources */,
 				925B6DBB224FE11E0047FAE8 /* ApiImage.swift in Sources */,
-				92D5468E224BF58C00AD75E7 /* ViewController.swift in Sources */,
 				92D5468C224BF58C00AD75E7 /* AppDelegate.swift in Sources */,
 				925B6DCF2250FED80047FAE8 /* LocalPersistenceImagesGateway.swift in Sources */,
 				925B6DE522516F110047FAE8 /* ImagesListPresenter.swift in Sources */,
@@ -817,14 +817,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		92D5468F224BF58C00AD75E7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				92D54690224BF58C00AD75E7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		92D54694224BF58D00AD75E7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -959,7 +951,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4KQC9K68AM;
-				INFOPLIST_FILE = ImageRandomizerApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ImageRandomizerApp/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -978,7 +970,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 4KQC9K68AM;
-				INFOPLIST_FILE = ImageRandomizerApp/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ImageRandomizerApp/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
