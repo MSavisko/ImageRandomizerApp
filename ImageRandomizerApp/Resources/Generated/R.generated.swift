@@ -132,6 +132,105 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
   
+  /// This `R.string` struct is generated, and contains static references to 1 localization tables.
+  struct string {
+    /// This `R.string.localizable` struct is generated, and contains static references to 8 localization keys.
+    struct localizable {
+      /// Base translation: Created by Maksym Savisko
+      /// 
+      /// Locales: Base
+      static let imageDetailsInfoAlertTitle = Rswift.StringResource(key: "imageDetailsInfoAlertTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
+      /// Base translation: Details
+      /// 
+      /// Locales: Base
+      static let imageDetailsNavigationTitle = Rswift.StringResource(key: "imageDetailsNavigationTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
+      /// Base translation: Error
+      /// 
+      /// Locales: Base
+      static let defaultError = Rswift.StringResource(key: "defaultError", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
+      /// Base translation: List
+      /// 
+      /// Locales: Base
+      static let imageListNavigationTitle = Rswift.StringResource(key: "imageListNavigationTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
+      /// Base translation: OK
+      /// 
+      /// Locales: Base
+      static let defaultOk = Rswift.StringResource(key: "defaultOk", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
+      /// Base translation: RANDOM
+      /// 
+      /// Locales: Base
+      static let imageDetailsBottomButtonTitle = Rswift.StringResource(key: "imageDetailsBottomButtonTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
+      /// Base translation: SELECT
+      /// 
+      /// Locales: Base
+      static let imageDetailsUpperButtonTitle = Rswift.StringResource(key: "imageDetailsUpperButtonTitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
+      /// Base translation: The time now is %@
+      /// 
+      /// Locales: Base
+      static let imageDetailsInfoAlertSubtitle = Rswift.StringResource(key: "imageDetailsInfoAlertSubtitle", tableName: "Localizable", bundle: R.hostingBundle, locales: ["Base"], comment: nil)
+      
+      /// Base translation: Created by Maksym Savisko
+      /// 
+      /// Locales: Base
+      static func imageDetailsInfoAlertTitle(_: Void = ()) -> String {
+        return NSLocalizedString("imageDetailsInfoAlertTitle", bundle: R.hostingBundle, value: "Created by Maksym Savisko", comment: "")
+      }
+      
+      /// Base translation: Details
+      /// 
+      /// Locales: Base
+      static func imageDetailsNavigationTitle(_: Void = ()) -> String {
+        return NSLocalizedString("imageDetailsNavigationTitle", bundle: R.hostingBundle, value: "Details", comment: "")
+      }
+      
+      /// Base translation: Error
+      /// 
+      /// Locales: Base
+      static func defaultError(_: Void = ()) -> String {
+        return NSLocalizedString("defaultError", bundle: R.hostingBundle, value: "Error", comment: "")
+      }
+      
+      /// Base translation: List
+      /// 
+      /// Locales: Base
+      static func imageListNavigationTitle(_: Void = ()) -> String {
+        return NSLocalizedString("imageListNavigationTitle", bundle: R.hostingBundle, value: "List", comment: "")
+      }
+      
+      /// Base translation: OK
+      /// 
+      /// Locales: Base
+      static func defaultOk(_: Void = ()) -> String {
+        return NSLocalizedString("defaultOk", bundle: R.hostingBundle, value: "OK", comment: "")
+      }
+      
+      /// Base translation: RANDOM
+      /// 
+      /// Locales: Base
+      static func imageDetailsBottomButtonTitle(_: Void = ()) -> String {
+        return NSLocalizedString("imageDetailsBottomButtonTitle", bundle: R.hostingBundle, value: "RANDOM", comment: "")
+      }
+      
+      /// Base translation: SELECT
+      /// 
+      /// Locales: Base
+      static func imageDetailsUpperButtonTitle(_: Void = ()) -> String {
+        return NSLocalizedString("imageDetailsUpperButtonTitle", bundle: R.hostingBundle, value: "SELECT", comment: "")
+      }
+      
+      /// Base translation: The time now is %@
+      /// 
+      /// Locales: Base
+      static func imageDetailsInfoAlertSubtitle(_ value1: String) -> String {
+        return String(format: NSLocalizedString("imageDetailsInfoAlertSubtitle", bundle: R.hostingBundle, value: "The time now is %@", comment: ""), locale: R.applicationLocale, value1)
+      }
+      
+      fileprivate init() {}
+    }
+    
+    fileprivate init() {}
+  }
+  
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()

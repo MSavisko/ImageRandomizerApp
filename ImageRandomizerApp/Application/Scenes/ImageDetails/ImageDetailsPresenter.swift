@@ -21,6 +21,7 @@ protocol ImageDetailsPresenter: class {
 }
 
 class ImageDetailsPresenterImpl: ImageDetailsPresenter {
+    
     private weak var view: ImageDetailsView?
     private var image: Image
     var router: ImageDetailsRouter
@@ -48,10 +49,13 @@ class ImageDetailsPresenterImpl: ImageDetailsPresenter {
     func viewDidLoad() {
         view?.setup()
         chooseLatestImage()
-        view?.display(navigationTitle: "Details")
+        view?.display(navigationTitle: Localizable
+            .imageDetailsNavigationTitle())
         view?.display(image: image)
-        view?.display(upperButtonTitle: "SELECT")
-        view?.display(bottomButtonTitle: "RANDOM")
+        view?.display(upperButtonTitle: Localizable
+            .imageDetailsUpperButtonTitle())
+        view?.display(bottomButtonTitle: Localizable
+            .imageDetailsUpperButtonTitle())
         view?.displayInfoIcon(name: R.image.infoIcon.name)
     }
     
@@ -75,9 +79,11 @@ class ImageDetailsPresenterImpl: ImageDetailsPresenter {
     
     func pressedRightBarItem() {
         router
-            .presentAlert(title: "Created by Maksym Savisko",
-                          subtitle: "The time now is \(dateProvider.formattedStringCurrentDate())",
-                          confirmTitle: "OK")
+            .presentAlert(title: Localizable.imageDetailsInfoAlertTitle(),
+                          subtitle: Localizable
+                            .imageDetailsInfoAlertSubtitle("\(dateProvider.formattedStringCurrentDate())") ,
+                          confirmTitle: Localizable
+                            .defaultOk())
             .subscribe(onNext: { [weak self] (isPresented, _) in
                 if isPresented {
                     DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(10)) {
@@ -122,9 +128,9 @@ class ImageDetailsPresenterImpl: ImageDetailsPresenter {
     
     private func handleAppearing(_ error: Error) {
         router
-            .presentAlert(title: "Error",
+            .presentAlert(title: Localizable.defaultError(),
                           subtitle: error.localizedDescription,
-                          confirmTitle: "OK")
+                          confirmTitle: Localizable.defaultOk())
             .subscribe(onNext: { _ in })
             .disposed(by: disposeBag)
     }

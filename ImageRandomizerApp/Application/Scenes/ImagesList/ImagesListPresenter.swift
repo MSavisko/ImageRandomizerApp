@@ -55,7 +55,8 @@ class ImagesListPresenterImpl: ImagesListPresenter {
     // MARK: ImagesListPresenter
     func viewDidLoad() {
         view?.setup()
-        view?.display(navigationTitle: "List")
+        view?.display(navigationTitle: Localizable
+            .imageListNavigationTitle())
         displayImagesListUseCase
             .displayImages()
             .subscribe(onNext: { [weak self] images in
