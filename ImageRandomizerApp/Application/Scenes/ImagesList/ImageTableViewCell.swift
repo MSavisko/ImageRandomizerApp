@@ -44,7 +44,8 @@ class ImageTableViewCell: UITableViewCell, ImageCellView  {
     func displayImage(with url: URL?) {
         leftImageView
             .setImage(url: url,
-                      isIndicatorExist: true)
+                      isIndicatorExist: true,
+                      forseTransition: false)
             .subscribe().disposed(by: disposeBag)
     }
     
