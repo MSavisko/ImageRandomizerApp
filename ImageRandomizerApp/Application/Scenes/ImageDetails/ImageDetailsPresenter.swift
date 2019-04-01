@@ -12,6 +12,7 @@ import RxSwift
 protocol ImageDetailsPresenter: class {
     var router: ImageDetailsRouter { get }
     func viewDidLoad()
+    func viewWillAppear()
     func endEditingImageName(text: String?)
     func pressedRightBarItem()
     func pressedView(text: String?)
@@ -51,7 +52,15 @@ class ImageDetailsPresenterImpl: ImageDetailsPresenter {
         view?.display(image: image)
         view?.display(upperButtonTitle: "SELECT")
         view?.display(bottomButtonTitle: "RANDOM")
-        view?.displayInfoIcon(name: "info-icon")
+        view?.displayInfoIcon(name: R.image.infoIcon.name)
+    }
+    
+    func viewWillAppear() {
+        view?.displayNavigationBar(colorName: R.color.lightGrey.name)
+        view?.displayNavigationBarTitle(colorName: R.color.lightBlack.name,
+                                        fontSize: 20.0)
+        view?.displayBackButton(colorName: R.color.blue.name)
+        view?.hideNavigationBarSeparator()
     }
     
     func endEditingImageName(text: String?) {
@@ -96,7 +105,6 @@ class ImageDetailsPresenterImpl: ImageDetailsPresenter {
     }
     
     func pressedUpperButton() {
-        view?.hideBackButtonText()
         router.showImagesList(imageListPresenterDelegate: self)
     }
     
@@ -122,9 +130,11 @@ class ImageDetailsPresenterImpl: ImageDetailsPresenter {
     }
 }
 
+// MARK: ImagesListPresenterDelegate
 extension ImageDetailsPresenterImpl: ImagesListPresenterDelegate {
     func imagesListPresenter(_ presenter: ImagesListPresenter,
                              didSelect image: Image) {
         view?.display(image: image)
+        presenter.router.dismissView()
     }
 }

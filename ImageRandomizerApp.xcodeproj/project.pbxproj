@@ -10,6 +10,10 @@
 		0A65AE98171334C5237FA5F6 /* Pods_ImageRandomizerAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 807C53527D29505E1DFCC241 /* Pods_ImageRandomizerAppUITests.framework */; };
 		2A2314D0DA9090475F588356 /* Pods_ImageRandomizerAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4471526FB54E6DA2F6BC2A27 /* Pods_ImageRandomizerAppTests.framework */; };
 		3EB125CAA3AB5129A876CAAC /* Pods_ImageRandomizerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA7A88D089F158582DADEED /* Pods_ImageRandomizerApp.framework */; };
+		9257F80122527361007AE74D /* UIColor+hexRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9257F80022527361007AE74D /* UIColor+hexRGB.swift */; };
+		9257F8042252A9FF007AE74D /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9257F8032252A9FF007AE74D /* ImageTableViewCell.swift */; };
+		9257F8062252AA2A007AE74D /* ImageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9257F8052252AA2A007AE74D /* ImageTableViewCell.xib */; };
+		9257F80A2252C1C9007AE74D /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9257F8092252C1C9007AE74D /* R.generated.swift */; };
 		925B6DA7224E99380047FAE8 /* UIImageView+RxKingfisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B6DA6224E99380047FAE8 /* UIImageView+RxKingfisher.swift */; };
 		925B6DAA224EA3830047FAE8 /* UIViewController+Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B6DA9224EA3830047FAE8 /* UIViewController+Load.swift */; };
 		925B6DAF224FAE9F0047FAE8 /* ImageDetailsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B6DAE224FAE9F0047FAE8 /* ImageDetailsRouter.swift */; };
@@ -73,6 +77,10 @@
 		70CCF5BAE47BCDA70ACF5D6E /* Pods-ImageRandomizerAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageRandomizerAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-ImageRandomizerAppUITests/Pods-ImageRandomizerAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		807C53527D29505E1DFCC241 /* Pods_ImageRandomizerAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageRandomizerAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A084E7A22FC32BA5CC2E4B7 /* Pods-ImageRandomizerAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageRandomizerAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ImageRandomizerAppTests/Pods-ImageRandomizerAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		9257F80022527361007AE74D /* UIColor+hexRGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hexRGB.swift"; sourceTree = "<group>"; };
+		9257F8032252A9FF007AE74D /* ImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
+		9257F8052252AA2A007AE74D /* ImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageTableViewCell.xib; sourceTree = "<group>"; };
+		9257F8092252C1C9007AE74D /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		925B6DA6224E99380047FAE8 /* UIImageView+RxKingfisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+RxKingfisher.swift"; sourceTree = "<group>"; };
 		925B6DA9224EA3830047FAE8 /* UIViewController+Load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Load.swift"; sourceTree = "<group>"; };
 		925B6DAE224FAE9F0047FAE8 /* ImageDetailsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsRouter.swift; sourceTree = "<group>"; };
@@ -158,6 +166,22 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9257F7FF22527344007AE74D /* UIColor */ = {
+			isa = PBXGroup;
+			children = (
+				9257F80022527361007AE74D /* UIColor+hexRGB.swift */,
+			);
+			path = UIColor;
+			sourceTree = "<group>";
+		};
+		9257F8072252BDB5007AE74D /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				9257F8092252C1C9007AE74D /* R.generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		925B6DA2224E987F0047FAE8 /* Library */ = {
 			isa = PBXGroup;
 			children = (
@@ -169,6 +193,7 @@
 		925B6DA4224E98A90047FAE8 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				9257F7FF22527344007AE74D /* UIColor */,
 				925B6DA8224EA3610047FAE8 /* UIViewController */,
 				925B6DA5224E98BB0047FAE8 /* UIImageView */,
 			);
@@ -215,6 +240,7 @@
 		925B6DAD224F88480047FAE8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9257F8072252BDB5007AE74D /* Generated */,
 				92D54692224BF58D00AD75E7 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -344,7 +370,6 @@
 		92BEE876224C0F2A003BF17F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				92BEE879224C0F5B003BF17F /* Main */,
 				92BEE878224C0F44003BF17F /* ImagesList */,
 				92BEE877224C0F34003BF17F /* ImageDetails */,
 			);
@@ -371,15 +396,10 @@
 				925B6DE622516F440047FAE8 /* ImagesListRouter.swift */,
 				925B6DE022516E690047FAE8 /* ImagesListViewController.swift */,
 				925B6DE222516E770047FAE8 /* ImagesListViewController.xib */,
+				9257F8032252A9FF007AE74D /* ImageTableViewCell.swift */,
+				9257F8052252AA2A007AE74D /* ImageTableViewCell.xib */,
 			);
 			path = ImagesList;
-			sourceTree = "<group>";
-		};
-		92BEE879224C0F5B003BF17F /* Main */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 		92BEE87C224C1218003BF17F /* Core */ = {
@@ -473,6 +493,7 @@
 			buildConfigurationList = 92D546B0224BF58D00AD75E7 /* Build configuration list for PBXNativeTarget "ImageRandomizerApp" */;
 			buildPhases = (
 				219988E51871CB9FBC9A6EB2 /* [CP] Check Pods Manifest.lock */,
+				9257F8082252BDE8007AE74D /* Generate Resource Identifiers via R.swift */,
 				92D54684224BF58C00AD75E7 /* Sources */,
 				92D54685224BF58C00AD75E7 /* Frameworks */,
 				92D54686224BF58C00AD75E7 /* Resources */,
@@ -576,6 +597,7 @@
 				925B6DE322516E770047FAE8 /* ImagesListViewController.xib in Resources */,
 				92D54696224BF58D00AD75E7 /* LaunchScreen.storyboard in Resources */,
 				92D54693224BF58D00AD75E7 /* Assets.xcassets in Resources */,
+				9257F8062252AA2A007AE74D /* ImageTableViewCell.xib in Resources */,
 				92D54691224BF58C00AD75E7 /* Main.storyboard in Resources */,
 				92BEE881224C15A8003BF17F /* ImageDetailsViewController.xib in Resources */,
 			);
@@ -642,6 +664,26 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9257F8082252BDE8007AE74D /* Generate Resource Identifiers via R.swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = "Generate Resource Identifiers via R.swift";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/ImageRandomizerApp/Resources/Generated/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/ImageRandomizerApp/Resources/Generated/R.generated.swift\"\n";
+		};
 		C8BDE0C18E8AB813585E559D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -674,6 +716,7 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-ImageRandomizerApp/Pods-ImageRandomizerApp-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
@@ -687,6 +730,7 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
@@ -709,6 +753,7 @@
 			files = (
 				925B6DBE224FE1580047FAE8 /* ImagesApiRequest.swift in Sources */,
 				925B6DE722516F440047FAE8 /* ImagesListRouter.swift in Sources */,
+				9257F80A2252C1C9007AE74D /* R.generated.swift in Sources */,
 				925B6DE122516E690047FAE8 /* ImagesListViewController.swift in Sources */,
 				92BEE87B224C1047003BF17F /* ImageDetailsViewController.swift in Sources */,
 				925B6DE922516F830047FAE8 /* ImagesListConfigurator.swift in Sources */,
@@ -719,6 +764,7 @@
 				925B6DC4224FE4630047FAE8 /* ApiImagesGateway.swift in Sources */,
 				925B6DAF224FAE9F0047FAE8 /* ImageDetailsRouter.swift in Sources */,
 				92BEE87F224C123B003BF17F /* Image.swift in Sources */,
+				9257F80122527361007AE74D /* UIColor+hexRGB.swift in Sources */,
 				925B6DBB224FE11E0047FAE8 /* ApiImage.swift in Sources */,
 				92D5468E224BF58C00AD75E7 /* ViewController.swift in Sources */,
 				92D5468C224BF58C00AD75E7 /* AppDelegate.swift in Sources */,
@@ -733,6 +779,7 @@
 				925B6DAA224EA3830047FAE8 /* UIViewController+Load.swift in Sources */,
 				925B6DA7224E99380047FAE8 /* UIImageView+RxKingfisher.swift in Sources */,
 				925B6DD522511A100047FAE8 /* CacheImagesGateway.swift in Sources */,
+				9257F8042252A9FF007AE74D /* ImageTableViewCell.swift in Sources */,
 				925B6DC6225018340047FAE8 /* ApiImages.swift in Sources */,
 				925B6DB8224FDCF00047FAE8 /* ApiClient.swift in Sources */,
 			);
@@ -840,7 +887,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -895,7 +942,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

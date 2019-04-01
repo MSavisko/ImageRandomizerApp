@@ -12,7 +12,6 @@ import RxRealm
 import RxSwift
 
 protocol LocalPersistenceImagesGateway: ImagesGateway {
-    //func update(image: Image, name: String) -> Observable<Image>
     func update(image: Image, parameters: UpdateImageParameters)
         -> Observable<Image>
     func add(images: [Image]) -> Observable<[Image]>
@@ -62,36 +61,6 @@ class LocalPersistenceImagesGatewayImpl: LocalPersistenceImagesGateway {
         return observableRealmImages
             .map { $0.map { $0.image } }
     }
-    
-    // MARK: LocalPersistenceImagesGateway
-    /*
-    func update(image: Image, name: String) -> Observable<Image> {
-        let result = withRealm("getting image by id") { realm
-            -> Observable<RealmImage> in
-            let image = realm
-                .objects(RealmImage.self)
-                .filter("imageId == %@", image.imageId).first
-            
-            guard
-                let validImage = image
-            else {
-                return .error(LocalPersistenceError.emptyResult)
-            }
-            
-            try realm.write {
-                validImage.name = name
-            }
-            
-            return Observable.from(object: validImage)
-        }
-        
-        guard let observableRealmImage = result else {
-            return .error(LocalPersistenceError.couldnotRead)
-        }
-        
-        return observableRealmImage.map { $0.image }
-    }
-    */
     
     func update(image: Image, parameters: UpdateImageParameters)
         -> Observable<Image> {

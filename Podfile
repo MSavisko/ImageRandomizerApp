@@ -8,6 +8,7 @@ def install_dependencies
   pod "RxGesture", '2.1.0'
   pod 'RealmSwift', '3.13.1'
   pod 'RxRealm', '0.7.6'
+  pod 'R.swift', '5.0.2'
 end
 
 target 'ImageRandomizerApp' do
