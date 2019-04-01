@@ -134,5 +134,6 @@ extension ImageDetailsPresenterImpl: ImagesListPresenterDelegate {
     func imagesListPresenter(_ presenter: ImagesListPresenter,
                              didSelect image: Image) {
         view?.display(image: image)
+        presenter.router.dismissView()
     }
 }

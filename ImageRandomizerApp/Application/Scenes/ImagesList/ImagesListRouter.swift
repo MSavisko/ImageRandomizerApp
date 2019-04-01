@@ -15,6 +15,10 @@ protocol ImagesListRouter: ViewRouter {
 class ImagesListRouterImpl: ImagesListRouter {
     private weak var imageListViewController: ImagesListViewController?
     
+    init(imageListViewController: ImagesListViewController) {
+        self.imageListViewController = imageListViewController
+    }
+    
     func dismissView() {
         imageListViewController?
             .navigationController?

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RxSwift
 
 protocol ImagesListPresenterDelegate: class {
     func imagesListPresenter(_ presenter: ImagesListPresenter,
@@ -15,24 +16,68 @@ protocol ImagesListPresenterDelegate: class {
 
 protocol ImagesListPresenter: class {
     var router: ImagesListRouter { get }
+    var numberOfImages: Int { get }
     func viewDidLoad()
+    func viewWillAppear()
+    func didSelect(row: Int)
+    func configure(cell: ImageCellView, forRow row: Int)
 }
 
 class ImagesListPresenterImpl: ImagesListPresenter {
     private weak var view: ImagesListView?
     var router: ImagesListRouter
+    private let displayImagesListUseCase: DisplayImagesListUseCase
     private weak var delegate: ImagesListPresenterDelegate?
+    private var disposeBag = DisposeBag()
+    
+    // Not private, because of test purpose
+    var images: [Image] = []
+    
+    var numberOfImages: Int {
+        return images.count
+    }
     
     init(view: ImagesListView,
          router: ImagesListRouter,
+         displayImagesListUseCase: DisplayImagesListUseCase,
          delegate: ImagesListPresenterDelegate?) {
         self.view = view
         self.router = router
+        self.displayImagesListUseCase = displayImagesListUseCase
         self.delegate = delegate
     }
     
     // MARK: ImagesListPresenter
     func viewDidLoad() {
-        
+        view?.setup()
+        view?.display(navigationTitle: "LIST")
+        displayImagesListUseCase
+            .displayImages()
+            .subscribe(onNext: { [weak self] images in
+                self?.images = images
+                self?.view?.refreshImagesView()
+            }).disposed(by: disposeBag)
+    }
+    
+    func viewWillAppear() {
+        view?.displayNavigationBar(colorName: "light-grey")
+        view?.displayNavigationBarTitle(colorName: "light-black",
+                                        fontSize: 20.0)
+    }
+    
+    
+    func configure(cell: ImageCellView, forRow row: Int) {
+        guard images.indices.contains(row) else { return }
+        let image = images[row]
+        let positionNumber = row + 1
+        cell.displayName(text: image.name)
+        cell.displayImage(with: image.imageURL)
+        cell.displayPosition(positionNumber)
+    }
+    
+    func didSelect(row: Int) {
+        guard images.indices.contains(row) else { return }
+        let image = images[row]
+        delegate?.imagesListPresenter(self, didSelect: image)
     }
 }

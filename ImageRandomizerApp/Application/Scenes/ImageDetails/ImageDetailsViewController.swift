@@ -45,11 +45,17 @@ class ImageDetailsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         presenter?.viewWillAppear()
+        self.navigationController?
+            .navigationBar
+            .setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?
+            .navigationBar
+            .shadowImage = UIImage()
     }
 }
 
+// MARK: ImageDetailsView
 extension ImageDetailsViewController: ImageDetailsView {
     func setup() {
         setupNavigationItems()
