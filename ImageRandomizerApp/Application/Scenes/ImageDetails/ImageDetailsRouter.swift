@@ -34,6 +34,7 @@ class ImageDetailsRouterImpl: ImageDetailsRouter {
             let controller = UIAlertController(title: title,
                                                message: subtitle,
                                                preferredStyle: .alert)
+            controller.view.tintColor = UIColor(named: "blue")
             let confirmAction = UIAlertAction(title: confirmTitle,
                                               style: .default) { _ in
                     observer.on(.next((false, true)))

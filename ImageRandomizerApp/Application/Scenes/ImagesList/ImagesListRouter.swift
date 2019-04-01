@@ -9,7 +9,15 @@
 import UIKit
 
 protocol ImagesListRouter: ViewRouter {
+    func dismissView()
 }
 
 class ImagesListRouterImpl: ImagesListRouter {
+    private weak var imageListViewController: ImagesListViewController?
+    
+    func dismissView() {
+        imageListViewController?
+            .navigationController?
+            .popViewController(animated: true)
+    }
 }

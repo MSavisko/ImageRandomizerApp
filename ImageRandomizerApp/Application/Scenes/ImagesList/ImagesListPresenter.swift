@@ -14,12 +14,13 @@ protocol ImagesListPresenterDelegate: class {
 }
 
 protocol ImagesListPresenter: class {
+    var router: ImagesListRouter { get }
     func viewDidLoad()
 }
 
 class ImagesListPresenterImpl: ImagesListPresenter {
     private weak var view: ImagesListView?
-    private var router: ImagesListRouter
+    var router: ImagesListRouter
     private weak var delegate: ImagesListPresenterDelegate?
     
     init(view: ImagesListView,

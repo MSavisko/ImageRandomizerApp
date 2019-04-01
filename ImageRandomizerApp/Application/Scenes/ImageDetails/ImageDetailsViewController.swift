@@ -18,7 +18,10 @@ protocol ImageDetailsView: class {
     func display(bottomButtonTitle: String)
     func displayInfoIcon(name: String)
     func endEditing()
-    func hideBackButtonText()
+    func displayNavigationBar(colorName: String)
+    func displayNavigationBarTitle(colorName: String,
+                                   fontSize: CGFloat)
+    func displayBackButton(colorName: String)
 }
 
 class ImageDetailsViewController: UIViewController {
@@ -39,55 +42,19 @@ class ImageDetailsViewController: UIViewController {
         configurator.configure(imageDetailsViewController: self)
         presenter?.viewDidLoad()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        presenter?.viewWillAppear()
+    }
 }
 
 extension ImageDetailsViewController: ImageDetailsView {
     func setup() {
-        rightBarButton = UIBarButtonItem(image: nil,
-                                         style: .plain,
-                                         target: nil,
-                                         action: nil)
-        navigationItem.rightBarButtonItem = rightBarButton
-        
-        nameTextField.rx
-            .controlEvent([.editingDidEndOnExit])
-            .asDriver()
-            .drive(onNext: { [weak self] _ in
-                self?.presenter?
-                    .endEditingImageName(text: self?.nameTextField.text)
-            })
-            .disposed(by: disposeBag)
-        
-        view.rx
-            .tapGesture()
-            .when(.recognized)
-            .subscribe(onNext: { [weak self] _ in
-                self?.presenter?.pressedView(text: self?.nameTextField.text)
-            }).disposed(by: disposeBag)
-        
-        bottomButton.rx
-            .controlEvent([.touchUpInside])
-            .asDriver()
-            .throttle(1.0, latest: true)
-            .drive(onNext: { [weak self] _ in
-                self?.presenter?.pressedBottomButton()
-            }).disposed(by: disposeBag)
-        
-        upperButton.rx
-            .controlEvent([.touchUpInside])
-            .asDriver()
-            .throttle(1.0, latest: true)
-            .drive(onNext: { [weak self] _ in
-                self?.presenter?.pressedUpperButton()
-            }).disposed(by: disposeBag)
-        
-        let item = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
-        navigationItem.backBarButtonItem = item
-        
-        imageView.layer.cornerRadius = 20.0
-        bottomButton.layer.cornerRadius = 10.0
-        upperButton.layer.cornerRadius = 10.0
-        nameTextField.layer.cornerRadius = 10.0
+        setupNavigationItems()
+        setupButtons()
+        setupViews()
     }
     
     func display(navigationTitle: String) {
@@ -131,7 +98,78 @@ extension ImageDetailsViewController: ImageDetailsView {
         view.endEditing(true)
     }
     
-    func hideBackButtonText() {
-        //navigationItem.backBarButtonItem?.title = " "
+    func displayNavigationBar(colorName: String) {
+        navigationController?.navigationBar
+            .barTintColor = UIColor(named: colorName)
+    }
+    
+    func displayNavigationBarTitle(colorName: String,
+                                   fontSize: CGFloat) {
+        guard let color = UIColor(named: colorName) else { return }
+        let font = UIFont.systemFont(ofSize: fontSize,
+                                     weight: .regular)
+        navigationController?.navigationBar
+            .titleTextAttributes = [.foregroundColor: color,
+                                    .font: font]
+    }
+    
+    func displayBackButton(colorName: String) {
+        navigationController?.navigationBar
+            .tintColor = UIColor(named: colorName)
+    }
+    
+    // MARK: Setup
+    private func setupNavigationItems() {
+        rightBarButton = UIBarButtonItem(image: nil,
+                                         style: .plain,
+                                         target: nil,
+                                         action: nil)
+        navigationItem.rightBarButtonItem = rightBarButton
+        
+        let item = UIBarButtonItem(title: " ", style: .plain, target: nil, action: nil)
+        navigationItem.backBarButtonItem = item
+    }
+    
+    private func setupButtons() {
+        bottomButton.rx
+            .controlEvent([.touchUpInside])
+            .asDriver()
+            .throttle(1.0, latest: true)
+            .drive(onNext: { [weak self] _ in
+                self?.presenter?.pressedBottomButton()
+            }).disposed(by: disposeBag)
+        
+        upperButton.rx
+            .controlEvent([.touchUpInside])
+            .asDriver()
+            .throttle(1.0, latest: true)
+            .drive(onNext: { [weak self] _ in
+                self?.presenter?.pressedUpperButton()
+            }).disposed(by: disposeBag)
+    }
+    
+    private func setupViews() {
+        view.rx
+            .tapGesture()
+            .when(.recognized)
+            .subscribe(onNext: { [weak self] _ in
+                self?.presenter?.pressedView(text: self?.nameTextField.text)
+            }).disposed(by: disposeBag)
+        
+        nameTextField.rx
+            .controlEvent([.editingDidEndOnExit])
+            .asDriver()
+            .drive(onNext: { [weak self] _ in
+                self?.presenter?
+                    .endEditingImageName(text: self?.nameTextField.text)
+            })
+            .disposed(by: disposeBag)
+        
+        imageView.layer.cornerRadius = 20.0
+        bottomButton.layer.cornerRadius = 10.0
+        upperButton.layer.cornerRadius = 10.0
+        nameTextField.layer.cornerRadius = 10.0
+        
+        nameTextField.tintColor = UIColor(named: "blue")
     }
 }
