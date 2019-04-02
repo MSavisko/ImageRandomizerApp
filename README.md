@@ -39,7 +39,6 @@ pod install
 * [iOS Architecture Patterns](https://medium.com/ios-os-x-development/ios-architecture-patterns-ecba4c38de52#.67lieoiim)
 * [Architecture Wars - A New Hope](https://swifting.io/blog/2016/09/07/architecture-wars-a-new-hope/)
 * [VIPER to be or not to be?](https://swifting.io/blog/2016/03/07/8-viper-to-be-or-not-to-be/?utm_source=swifting.io&utm_medium=web&utm_campaign=blog%20post)
-* [Effective Android Architecture](https://realm.io/news/360andev-richa-khandelwal-effective-android-architecture-patterns-java/) - our note here is that you should be careful about coupling you application to Rx* or any other framework for that matter. Please read [Make the Magic go away, by Uncle Bob](https://8thlight.com/blog/uncle-bob/2015/08/06/let-the-magic-die.html) and think twice before letting a framework take over your application.
 * [Improve your iOS Architecture with FlowControllers](http://merowing.info/2016/01/improve-your-ios-architecture-with-flowcontrollers/)
 * [GUI Architectures, by Martin Fowler](https://martinfowler.com/eaaDev/uiArchs.html)
 
