@@ -9,11 +9,11 @@
 import Foundation
 import RxSwift
 
-protocol DisplayImagesList {
+protocol DisplayImagesListUseCase {
     func displayImages() -> Observable<[Image]>
 }
 
-class DisplayImagesListImpl: DisplayImagesList {
+class DisplayImagesListUseCaseImpl: DisplayImagesListUseCase {
     private let imagesGateway: ImagesGateway
     
     init(imagesGateway: ImagesGateway) {

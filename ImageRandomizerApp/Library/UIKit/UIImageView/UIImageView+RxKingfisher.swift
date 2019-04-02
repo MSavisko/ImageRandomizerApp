@@ -15,6 +15,7 @@ public extension UIImageView {
     public func setImage(url: URL?,
                          placeholder: UIImage? = nil,
                          isIndicatorExist: Bool = false,
+                         forseTransition: Bool = true,
                          fadeDuration: Double = 0.4) -> Observable<Bool> {
         return Observable.create { observer in
             guard let imageUrl = url else {
@@ -23,10 +24,13 @@ public extension UIImageView {
                 return Disposables.create()
             }
             
-            var options: KingfisherOptionsInfo?
+            var options: KingfisherOptionsInfo? = []
             if fadeDuration > 0.0 {
-                options = [.transition(.fade(fadeDuration)),
-                           .forceTransition]
+                options = [.transition(.fade(fadeDuration))]
+            }
+            
+            if forseTransition {
+                options?.append(.forceTransition)
             }
 
             let placeholder = self.image == nil ? placeholder : self.image

@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import RealmSwift
 
 protocol ViewRouter {}
 
@@ -34,6 +35,7 @@ class ImageDetailsRouterImpl: ImageDetailsRouter {
             let controller = UIAlertController(title: title,
                                                message: subtitle,
                                                preferredStyle: .alert)
+            controller.view.tintColor = R.color.blue()
             let confirmAction = UIAlertAction(title: confirmTitle,
                                               style: .default) { _ in
                     observer.on(.next((false, true)))
@@ -54,13 +56,26 @@ class ImageDetailsRouterImpl: ImageDetailsRouter {
     }
     
     func showImagesList(imageListPresenterDelegate: ImagesListPresenterDelegate) {
-        let imagesListConfigurator = ImagesListConfiguratorImpl(imageListPresenterDelegate: imageListPresenterDelegate)
-        let imagesListViewController = ImagesListViewController()
-        imagesListViewController.loadViewIfNeeded()
-        imagesListViewController.configurator = imagesListConfigurator
+        let viewController = ImagesListViewController()
+        let router = ImagesListRouterImpl(imageListViewController: viewController)
+        let configurator = ImagesListConfiguratorImpl(imageListPresenterDelegate: imageListPresenterDelegate)
+        let apiClient = ApiClientImpl(urlSessionConfiguration: .default,
+                                      completionHandlerQueue: .main)
+        let apiGateway = ApiImagesGatewayImpl(apiClient: apiClient)
+        let localGateway = LocalPersistenceImagesGatewayImpl(realm: try! Realm())
+        let cacheGateway = CacheImagesGatewayImpl(apiImagesGateway: apiGateway,
+                                                  localPersistanceImagesGateway: localGateway)
+        let displayUseCase = DisplayImagesListUseCaseImpl(imagesGateway: cacheGateway)
+        let presenter = ImagesListPresenterImpl(view: viewController,
+                                                router: router,
+                                                displayImagesListUseCase: displayUseCase,
+                                                delegate: imageListPresenterDelegate)
+        viewController.configurator = configurator
+        viewController.presenter = presenter
+        viewController.loadViewIfNeeded()
         imageDetailsViewController?
             .navigationController?
-            .pushViewController(imagesListViewController,
+            .pushViewController(viewController,
                                 animated: true)
     }
 }

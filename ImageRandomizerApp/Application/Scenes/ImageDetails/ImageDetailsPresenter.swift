@@ -12,6 +12,7 @@ import RxSwift
 protocol ImageDetailsPresenter: class {
     var router: ImageDetailsRouter { get }
     func viewDidLoad()
+    func viewWillAppear()
     func endEditingImageName(text: String?)
     func pressedRightBarItem()
     func pressedView(text: String?)
@@ -20,6 +21,7 @@ protocol ImageDetailsPresenter: class {
 }
 
 class ImageDetailsPresenterImpl: ImageDetailsPresenter {
+    
     private weak var view: ImageDetailsView?
     private var image: Image
     var router: ImageDetailsRouter
@@ -47,11 +49,22 @@ class ImageDetailsPresenterImpl: ImageDetailsPresenter {
     func viewDidLoad() {
         view?.setup()
         chooseLatestImage()
-        view?.display(navigationTitle: "Details")
+        view?.display(navigationTitle: Localizable
+            .imageDetailsNavigationTitle())
         view?.display(image: image)
-        view?.display(upperButtonTitle: "SELECT")
-        view?.display(bottomButtonTitle: "RANDOM")
-        view?.displayInfoIcon(name: "info-icon")
+        view?.display(upperButtonTitle: Localizable
+            .imageDetailsUpperButtonTitle())
+        view?.display(bottomButtonTitle: Localizable
+            .imageDetailsUpperButtonTitle())
+        view?.displayInfoIcon(name: R.image.infoIcon.name)
+    }
+    
+    func viewWillAppear() {
+        view?.displayNavigationBar(colorName: R.color.lightGrey.name)
+        view?.displayNavigationBarTitle(colorName: R.color.lightBlack.name,
+                                        fontSize: 20.0)
+        view?.displayBackButton(colorName: R.color.blue.name)
+        view?.hideNavigationBarSeparator()
     }
     
     func endEditingImageName(text: String?) {
@@ -66,9 +79,11 @@ class ImageDetailsPresenterImpl: ImageDetailsPresenter {
     
     func pressedRightBarItem() {
         router
-            .presentAlert(title: "Created by Maksym Savisko",
-                          subtitle: "The time now is \(dateProvider.formattedStringCurrentDate())",
-                          confirmTitle: "OK")
+            .presentAlert(title: Localizable.imageDetailsInfoAlertTitle(),
+                          subtitle: Localizable
+                            .imageDetailsInfoAlertSubtitle("\(dateProvider.formattedStringCurrentDate())") ,
+                          confirmTitle: Localizable
+                            .defaultOk())
             .subscribe(onNext: { [weak self] (isPresented, _) in
                 if isPresented {
                     DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(10)) {
@@ -96,7 +111,6 @@ class ImageDetailsPresenterImpl: ImageDetailsPresenter {
     }
     
     func pressedUpperButton() {
-        view?.hideBackButtonText()
         router.showImagesList(imageListPresenterDelegate: self)
     }
     
@@ -114,17 +128,19 @@ class ImageDetailsPresenterImpl: ImageDetailsPresenter {
     
     private func handleAppearing(_ error: Error) {
         router
-            .presentAlert(title: "Error",
+            .presentAlert(title: Localizable.defaultError(),
                           subtitle: error.localizedDescription,
-                          confirmTitle: "OK")
+                          confirmTitle: Localizable.defaultOk())
             .subscribe(onNext: { _ in })
             .disposed(by: disposeBag)
     }
 }
 
+// MARK: ImagesListPresenterDelegate
 extension ImageDetailsPresenterImpl: ImagesListPresenterDelegate {
     func imagesListPresenter(_ presenter: ImagesListPresenter,
                              didSelect image: Image) {
         view?.display(image: image)
+        presenter.router.dismissView()
     }
 }
