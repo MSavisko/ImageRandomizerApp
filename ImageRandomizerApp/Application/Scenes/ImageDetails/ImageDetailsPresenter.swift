@@ -55,7 +55,7 @@ class ImageDetailsPresenterImpl: ImageDetailsPresenter {
         view?.display(upperButtonTitle: Localizable
             .imageDetailsUpperButtonTitle())
         view?.display(bottomButtonTitle: Localizable
-            .imageDetailsUpperButtonTitle())
+            .imageDetailsBottomButtonTitle())
         view?.displayInfoIcon(name: R.image.infoIcon.name)
     }
     
