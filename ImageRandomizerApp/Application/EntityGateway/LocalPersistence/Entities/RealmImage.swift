@@ -17,7 +17,7 @@ class RealmImage: Object {
     @objc dynamic var ratio: Double = 1.0
     @objc dynamic var isLatest: Bool = false
     
-    override class func primaryKey() -> String? {
+    override static func primaryKey() -> String? {
         return "imageId"
     }
 }

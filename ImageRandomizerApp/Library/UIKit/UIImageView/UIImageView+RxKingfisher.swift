@@ -12,11 +12,11 @@ import RxSwift
 
 public extension UIImageView {
     @discardableResult
-    public func setImage(url: URL?,
-                         placeholder: UIImage? = nil,
-                         isIndicatorExist: Bool = false,
-                         forseTransition: Bool = true,
-                         fadeDuration: Double = 0.4) -> Observable<Bool> {
+    func setImage(url: URL?,
+                  placeholder: UIImage? = nil,
+                  isIndicatorExist: Bool = false,
+                  forseTransition: Bool = true,
+                  fadeDuration: Double = 0.4) -> Observable<Bool> {
         return Observable.create { observer in
             guard let imageUrl = url else {
                 observer.on(.next(false))
@@ -32,7 +32,7 @@ public extension UIImageView {
             if forseTransition {
                 options?.append(.forceTransition)
             }
-
+            
             let placeholder = self.image == nil ? placeholder : self.image
             
             var wrapper = self.kf
