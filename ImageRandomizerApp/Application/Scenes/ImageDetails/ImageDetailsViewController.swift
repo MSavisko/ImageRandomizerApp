@@ -88,7 +88,7 @@ extension ImageDetailsViewController: ImageDetailsView {
         button.rx
             .tap
             .asDriver()
-            .throttle(1.0, latest: true)
+            .throttle(.seconds(1), latest: true)
             .drive(onNext: { [weak self] in
                 self?.presenter?.pressedRightBarItem()
             })
@@ -144,7 +144,7 @@ extension ImageDetailsViewController: ImageDetailsView {
         bottomButton.rx
             .controlEvent([.touchUpInside])
             .asDriver()
-            .throttle(1.0, latest: true)
+            .throttle(.seconds(1), latest: true)
             .drive(onNext: { [weak self] _ in
                 self?.presenter?.pressedBottomButton()
             }).disposed(by: disposeBag)
@@ -152,7 +152,7 @@ extension ImageDetailsViewController: ImageDetailsView {
         upperButton.rx
             .controlEvent([.touchUpInside])
             .asDriver()
-            .throttle(1.0, latest: true)
+            .throttle(.seconds(1), latest: true)
             .drive(onNext: { [weak self] _ in
                 self?.presenter?.pressedUpperButton()
             }).disposed(by: disposeBag)

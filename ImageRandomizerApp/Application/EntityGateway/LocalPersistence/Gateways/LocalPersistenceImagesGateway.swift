@@ -19,9 +19,17 @@ protocol LocalPersistenceImagesGateway: ImagesGateway {
 }
 
 protocol RealmDescribing: class {
-    func write(_ block: (() throws -> Void)) throws
+    func write(withoutNotifying tokens: [NotificationToken],
+               _ block: (() throws -> Void)) throws
     func objects<Element: Object>(_ type: Element.Type) -> Results<Element>
     func add(_ object: Object, update: Bool)
+}
+
+extension RealmDescribing {
+    func write(withoutNotifying tokens: [NotificationToken] = [],
+               _ block: (() throws -> Void)) throws {
+        try write(withoutNotifying: tokens, block)
+    }
 }
 
 extension Realm: RealmDescribing {}
