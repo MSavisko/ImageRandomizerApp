@@ -3,13 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A65AE98171334C5237FA5F6 /* Pods_ImageRandomizerAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 807C53527D29505E1DFCC241 /* Pods_ImageRandomizerAppUITests.framework */; };
-		2A2314D0DA9090475F588356 /* Pods_ImageRandomizerAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4471526FB54E6DA2F6BC2A27 /* Pods_ImageRandomizerAppTests.framework */; };
-		3EB125CAA3AB5129A876CAAC /* Pods_ImageRandomizerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AA7A88D089F158582DADEED /* Pods_ImageRandomizerApp.framework */; };
 		924F21D32252D4180027BF92 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 924F21D12252D4180027BF92 /* Localizable.strings */; };
 		924F21D62252D4DB0027BF92 /* R.swift+typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 924F21D52252D4DB0027BF92 /* R.swift+typealiases.swift */; };
 		9257F80122527361007AE74D /* UIColor+hexRGB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9257F80022527361007AE74D /* UIColor+hexRGB.swift */; };
@@ -49,6 +46,9 @@
 		92D54696224BF58D00AD75E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D54694224BF58D00AD75E7 /* LaunchScreen.storyboard */; };
 		92D546A1224BF58D00AD75E7 /* ImageRandomizerAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D546A0224BF58D00AD75E7 /* ImageRandomizerAppTests.swift */; };
 		92D546AC224BF58D00AD75E7 /* ImageRandomizerAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92D546AB224BF58D00AD75E7 /* ImageRandomizerAppUITests.swift */; };
+		B3211E2E9D054E33EF3F5A00 /* Pods_ImageRandomizerAppUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C1C728CB05F98035229AC0F2 /* Pods_ImageRandomizerAppUITests.framework */; };
+		D61FC389082CC7A782A788AE /* Pods_ImageRandomizerAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01AEAC9D3E91236876ABF685 /* Pods_ImageRandomizerAppTests.framework */; };
+		D9D7AD2FE597932780A2AEF4 /* Pods_ImageRandomizerApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FBC2D3E3AF0772F8E222E0 /* Pods_ImageRandomizerApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,14 +69,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		14CA98AF57211670003B6512 /* Pods-ImageRandomizerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageRandomizerApp.release.xcconfig"; path = "Target Support Files/Pods-ImageRandomizerApp/Pods-ImageRandomizerApp.release.xcconfig"; sourceTree = "<group>"; };
-		17FB6A84E5E100D6CEEAC071 /* Pods-ImageRandomizerAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageRandomizerAppTests.release.xcconfig"; path = "Target Support Files/Pods-ImageRandomizerAppTests/Pods-ImageRandomizerAppTests.release.xcconfig"; sourceTree = "<group>"; };
-		1AA7A88D089F158582DADEED /* Pods_ImageRandomizerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageRandomizerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		302A1549A90C99B4ACAB2EE9 /* Pods-ImageRandomizerAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageRandomizerAppUITests.release.xcconfig"; path = "Target Support Files/Pods-ImageRandomizerAppUITests/Pods-ImageRandomizerAppUITests.release.xcconfig"; sourceTree = "<group>"; };
-		4471526FB54E6DA2F6BC2A27 /* Pods_ImageRandomizerAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageRandomizerAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		70CCF5BAE47BCDA70ACF5D6E /* Pods-ImageRandomizerAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageRandomizerAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-ImageRandomizerAppUITests/Pods-ImageRandomizerAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		807C53527D29505E1DFCC241 /* Pods_ImageRandomizerAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageRandomizerAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8A084E7A22FC32BA5CC2E4B7 /* Pods-ImageRandomizerAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageRandomizerAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ImageRandomizerAppTests/Pods-ImageRandomizerAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		01AEAC9D3E91236876ABF685 /* Pods_ImageRandomizerAppTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageRandomizerAppTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D366477934CE4B2B9610FA1 /* Pods-ImageRandomizerAppUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageRandomizerAppUITests.debug.xcconfig"; path = "Target Support Files/Pods-ImageRandomizerAppUITests/Pods-ImageRandomizerAppUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2374E0BFF8E645D5B66122B4 /* Pods-ImageRandomizerApp-ImageRandomizerAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageRandomizerApp-ImageRandomizerAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ImageRandomizerApp-ImageRandomizerAppTests/Pods-ImageRandomizerApp-ImageRandomizerAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6EF7570A7C110AF2B4649FA3 /* Pods-ImageRandomizerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageRandomizerApp.debug.xcconfig"; path = "Target Support Files/Pods-ImageRandomizerApp/Pods-ImageRandomizerApp.debug.xcconfig"; sourceTree = "<group>"; };
+		70FBC2D3E3AF0772F8E222E0 /* Pods_ImageRandomizerApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageRandomizerApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8027D199346604CCE0718411 /* Pods-ImageRandomizerApp-ImageRandomizerAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageRandomizerApp-ImageRandomizerAppTests.release.xcconfig"; path = "Target Support Files/Pods-ImageRandomizerApp-ImageRandomizerAppTests/Pods-ImageRandomizerApp-ImageRandomizerAppTests.release.xcconfig"; sourceTree = "<group>"; };
 		924F21D22252D4180027BF92 /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Localizable.strings; sourceTree = "<group>"; };
 		924F21D52252D4DB0027BF92 /* R.swift+typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "R.swift+typealiases.swift"; sourceTree = "<group>"; };
 		9257F80022527361007AE74D /* UIColor+hexRGB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+hexRGB.swift"; sourceTree = "<group>"; };
@@ -122,7 +120,11 @@
 		92D546A7224BF58D00AD75E7 /* ImageRandomizerAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ImageRandomizerAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92D546AB224BF58D00AD75E7 /* ImageRandomizerAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRandomizerAppUITests.swift; sourceTree = "<group>"; };
 		92D546AD224BF58D00AD75E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BEC44B8727D0F4B6F21A784F /* Pods-ImageRandomizerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageRandomizerApp.debug.xcconfig"; path = "Target Support Files/Pods-ImageRandomizerApp/Pods-ImageRandomizerApp.debug.xcconfig"; sourceTree = "<group>"; };
+		A38FBEC9E59C49A9AA45FF89 /* Pods-ImageRandomizerAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageRandomizerAppTests.debug.xcconfig"; path = "Target Support Files/Pods-ImageRandomizerAppTests/Pods-ImageRandomizerAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B54444FAA5142C29B0F2289E /* Pods-ImageRandomizerAppUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageRandomizerAppUITests.release.xcconfig"; path = "Target Support Files/Pods-ImageRandomizerAppUITests/Pods-ImageRandomizerAppUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C1C728CB05F98035229AC0F2 /* Pods_ImageRandomizerAppUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ImageRandomizerAppUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8BA0A87D27C97990555FC5D /* Pods-ImageRandomizerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageRandomizerApp.release.xcconfig"; path = "Target Support Files/Pods-ImageRandomizerApp/Pods-ImageRandomizerApp.release.xcconfig"; sourceTree = "<group>"; };
+		E1CBF5F168EDD0B9DC97611E /* Pods-ImageRandomizerAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImageRandomizerAppTests.release.xcconfig"; path = "Target Support Files/Pods-ImageRandomizerAppTests/Pods-ImageRandomizerAppTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,7 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EB125CAA3AB5129A876CAAC /* Pods_ImageRandomizerApp.framework in Frameworks */,
+				D9D7AD2FE597932780A2AEF4 /* Pods_ImageRandomizerApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +140,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A2314D0DA9090475F588356 /* Pods_ImageRandomizerAppTests.framework in Frameworks */,
+				D61FC389082CC7A782A788AE /* Pods_ImageRandomizerAppTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,7 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0A65AE98171334C5237FA5F6 /* Pods_ImageRandomizerAppUITests.framework in Frameworks */,
+				B3211E2E9D054E33EF3F5A00 /* Pods_ImageRandomizerAppUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,14 +158,26 @@
 		449859378D8A88B295AFF166 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				BEC44B8727D0F4B6F21A784F /* Pods-ImageRandomizerApp.debug.xcconfig */,
-				14CA98AF57211670003B6512 /* Pods-ImageRandomizerApp.release.xcconfig */,
-				8A084E7A22FC32BA5CC2E4B7 /* Pods-ImageRandomizerAppTests.debug.xcconfig */,
-				17FB6A84E5E100D6CEEAC071 /* Pods-ImageRandomizerAppTests.release.xcconfig */,
-				70CCF5BAE47BCDA70ACF5D6E /* Pods-ImageRandomizerAppUITests.debug.xcconfig */,
-				302A1549A90C99B4ACAB2EE9 /* Pods-ImageRandomizerAppUITests.release.xcconfig */,
+				6EF7570A7C110AF2B4649FA3 /* Pods-ImageRandomizerApp.debug.xcconfig */,
+				D8BA0A87D27C97990555FC5D /* Pods-ImageRandomizerApp.release.xcconfig */,
+				A38FBEC9E59C49A9AA45FF89 /* Pods-ImageRandomizerAppTests.debug.xcconfig */,
+				E1CBF5F168EDD0B9DC97611E /* Pods-ImageRandomizerAppTests.release.xcconfig */,
+				1D366477934CE4B2B9610FA1 /* Pods-ImageRandomizerAppUITests.debug.xcconfig */,
+				B54444FAA5142C29B0F2289E /* Pods-ImageRandomizerAppUITests.release.xcconfig */,
+				2374E0BFF8E645D5B66122B4 /* Pods-ImageRandomizerApp-ImageRandomizerAppTests.debug.xcconfig */,
+				8027D199346604CCE0718411 /* Pods-ImageRandomizerApp-ImageRandomizerAppTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		69D62B76C827799211D59E77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				70FBC2D3E3AF0772F8E222E0 /* Pods_ImageRandomizerApp.framework */,
+				C1C728CB05F98035229AC0F2 /* Pods_ImageRandomizerAppUITests.framework */,
+				01AEAC9D3E91236876ABF685 /* Pods_ImageRandomizerAppTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		924F21D02252D3F70027BF92 /* Base.lproj */ = {
@@ -457,7 +471,7 @@
 				92D546AA224BF58D00AD75E7 /* ImageRandomizerAppUITests */,
 				92D54689224BF58C00AD75E7 /* Products */,
 				449859378D8A88B295AFF166 /* Pods */,
-				CBB335AA94CDBBE14E0D1836 /* Frameworks */,
+				69D62B76C827799211D59E77 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -499,16 +513,6 @@
 			path = ImageRandomizerAppUITests;
 			sourceTree = "<group>";
 		};
-		CBB335AA94CDBBE14E0D1836 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1AA7A88D089F158582DADEED /* Pods_ImageRandomizerApp.framework */,
-				4471526FB54E6DA2F6BC2A27 /* Pods_ImageRandomizerAppTests.framework */,
-				807C53527D29505E1DFCC241 /* Pods_ImageRandomizerAppUITests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -516,12 +520,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92D546B0224BF58D00AD75E7 /* Build configuration list for PBXNativeTarget "ImageRandomizerApp" */;
 			buildPhases = (
-				219988E51871CB9FBC9A6EB2 /* [CP] Check Pods Manifest.lock */,
+				EED1F498BDB994EC63C76062 /* [CP] Check Pods Manifest.lock */,
 				9257F8082252BDE8007AE74D /* Generate Resource Identifiers via R.swift */,
 				92D54684224BF58C00AD75E7 /* Sources */,
 				92D54685224BF58C00AD75E7 /* Frameworks */,
 				92D54686224BF58C00AD75E7 /* Resources */,
-				CF07D6AC911F7329B6FF2D35 /* [CP] Embed Pods Frameworks */,
+				8CDC64AEED9F04380BE4C58A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -536,7 +540,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92D546B3224BF58D00AD75E7 /* Build configuration list for PBXNativeTarget "ImageRandomizerAppTests" */;
 			buildPhases = (
-				C8BDE0C18E8AB813585E559D /* [CP] Check Pods Manifest.lock */,
+				E807FDA1C050D4AF74A5710F /* [CP] Check Pods Manifest.lock */,
 				92D54698224BF58D00AD75E7 /* Sources */,
 				92D54699224BF58D00AD75E7 /* Frameworks */,
 				92D5469A224BF58D00AD75E7 /* Resources */,
@@ -555,7 +559,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 92D546B6224BF58D00AD75E7 /* Build configuration list for PBXNativeTarget "ImageRandomizerAppUITests" */;
 			buildPhases = (
-				407B50F8137A57B7F1E7A1F9 /* [CP] Check Pods Manifest.lock */,
+				EB9D01CAFC5907ED10512BDB /* [CP] Check Pods Manifest.lock */,
 				92D546A3224BF58D00AD75E7 /* Sources */,
 				92D546A4224BF58D00AD75E7 /* Frameworks */,
 				92D546A5224BF58D00AD75E7 /* Resources */,
@@ -582,13 +586,16 @@
 				TargetAttributes = {
 					92D54687224BF58C00AD75E7 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1100;
 					};
 					92D5469B224BF58D00AD75E7 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1100;
 						TestTargetID = 92D54687224BF58C00AD75E7;
 					};
 					92D546A6224BF58D00AD75E7 = {
 						CreatedOnToolsVersion = 10.1;
+						LastSwiftMigration = 1100;
 						TestTargetID = 92D54687224BF58C00AD75E7;
 					};
 				};
@@ -644,48 +651,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		219988E51871CB9FBC9A6EB2 /* [CP] Check Pods Manifest.lock */ = {
+		8CDC64AEED9F04380BE4C58A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ImageRandomizerApp/Pods-ImageRandomizerApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ImageRandomizerApp-checkManifestLockResult.txt",
+				"${PODS_ROOT}/Target Support Files/Pods-ImageRandomizerApp/Pods-ImageRandomizerApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		407B50F8137A57B7F1E7A1F9 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-ImageRandomizerAppUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ImageRandomizerApp/Pods-ImageRandomizerApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9257F8082252BDE8007AE74D /* Generate Resource Identifiers via R.swift */ = {
@@ -708,7 +688,7 @@
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/ImageRandomizerApp/Resources/Generated/R.generated.swift\"\n";
 		};
-		C8BDE0C18E8AB813585E559D /* [CP] Check Pods Manifest.lock */ = {
+		E807FDA1C050D4AF74A5710F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -730,7 +710,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		CF07D6AC911F7329B6FF2D35 /* [CP] Embed Pods Frameworks */ = {
+		EB9D01CAFC5907ED10512BDB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -738,34 +718,40 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-ImageRandomizerApp/Pods-ImageRandomizerApp-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
-				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
-				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
-				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
-				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxGesture/RxGesture.framework",
-				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
-				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
-			name = "[CP] Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxGesture.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"$(DERIVED_FILE_DIR)/Pods-ImageRandomizerAppUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ImageRandomizerApp/Pods-ImageRandomizerApp-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EED1F498BDB994EC63C76062 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ImageRandomizerApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -978,10 +964,11 @@
 		};
 		92D546B1224BF58D00AD75E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BEC44B8727D0F4B6F21A784F /* Pods-ImageRandomizerApp.debug.xcconfig */;
+			baseConfigurationReference = 6EF7570A7C110AF2B4649FA3 /* Pods-ImageRandomizerApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Developer: maxim.savisko@gmail.com (4Q928P3GJN)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 4KQC9K68AM;
 				INFOPLIST_FILE = "$(SRCROOT)/ImageRandomizerApp/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -990,17 +977,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.maksym-savisko.ImageRandomizerApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				PROVISIONING_PROFILE_SPECIFIER = "ImageRandomizerApp Dev";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		92D546B2224BF58D00AD75E7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 14CA98AF57211670003B6512 /* Pods-ImageRandomizerApp.release.xcconfig */;
+			baseConfigurationReference = D8BA0A87D27C97990555FC5D /* Pods-ImageRandomizerApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Maksym Savisko (4KQC9K68AM)";
+				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = 4KQC9K68AM;
 				INFOPLIST_FILE = "$(SRCROOT)/ImageRandomizerApp/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1009,14 +998,15 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.maksym-savisko.ImageRandomizerApp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				PROVISIONING_PROFILE_SPECIFIER = "ImageRandomizerApp Dist";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		92D546B4224BF58D00AD75E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A084E7A22FC32BA5CC2E4B7 /* Pods-ImageRandomizerAppTests.debug.xcconfig */;
+			baseConfigurationReference = A38FBEC9E59C49A9AA45FF89 /* Pods-ImageRandomizerAppTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1030,7 +1020,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.maksym-savisko.ImageRandomizerAppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageRandomizerApp.app/ImageRandomizerApp";
 			};
@@ -1038,7 +1028,7 @@
 		};
 		92D546B5224BF58D00AD75E7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 17FB6A84E5E100D6CEEAC071 /* Pods-ImageRandomizerAppTests.release.xcconfig */;
+			baseConfigurationReference = E1CBF5F168EDD0B9DC97611E /* Pods-ImageRandomizerAppTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1052,7 +1042,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.maksym-savisko.ImageRandomizerAppTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ImageRandomizerApp.app/ImageRandomizerApp";
 			};
@@ -1060,7 +1050,7 @@
 		};
 		92D546B7224BF58D00AD75E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 70CCF5BAE47BCDA70ACF5D6E /* Pods-ImageRandomizerAppUITests.debug.xcconfig */;
+			baseConfigurationReference = 1D366477934CE4B2B9610FA1 /* Pods-ImageRandomizerAppUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1073,7 +1063,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.maksym-savisko.ImageRandomizerAppUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = ImageRandomizerApp;
 			};
@@ -1081,7 +1071,7 @@
 		};
 		92D546B8224BF58D00AD75E7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 302A1549A90C99B4ACAB2EE9 /* Pods-ImageRandomizerAppUITests.release.xcconfig */;
+			baseConfigurationReference = B54444FAA5142C29B0F2289E /* Pods-ImageRandomizerAppUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1094,7 +1084,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.maksym-savisko.ImageRandomizerAppUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = ImageRandomizerApp;
 			};
