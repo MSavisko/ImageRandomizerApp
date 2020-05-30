@@ -1,6 +1,6 @@
 # ImageRandomizerApp
 
-> The application that randomizes provided images written with Swift, MVP, clean architecture and RxSwift
+> The application that randomizes provided images written with Swift, MVP, clean architecture and RxSwift.
 
 ## Motivation
 Refresh knowledge about clean architecture, MVP and RxSwift.
@@ -9,9 +9,9 @@ Refresh knowledge about clean architecture, MVP and RxSwift.
 ![Design](docs/images/design.jpeg?raw=true)
 
 ## Requirements
-1. Xcode 11.0
-2. Bundler 2.0.1
-3. Swift 5.1
+1. Xcode 11.5
+2. Bundler ~ 2.0.0
+3. Swift 5.2
 
 ## Installation
 1. Clone repo.
