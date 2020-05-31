@@ -28,7 +28,7 @@ bundle exec pod install
 
 ## TODO's
 - [ ] Check negative use case (no internet connection, error fetching DB, etc).
-- [ ] Add SwiftLint.
+- [x] Add SwiftLint.
 - [ ] Add Unit tests.
 - [ ] Add UI tests.
 - [ ] Add DI framework (Swinject or Weaver).
