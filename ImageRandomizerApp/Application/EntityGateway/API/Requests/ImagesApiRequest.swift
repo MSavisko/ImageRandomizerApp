@@ -10,7 +10,9 @@ import Foundation
 
 struct ImagesApiRequest: ApiRequest {
     var urlRequest: URLRequest {
+        // swiftlint:disable line_length
         let url: URL! = URL(string: "https://gist.githubusercontent.com/MSavisko/f00990136a4d267f8a454fd01bff5ba2/raw/036878aadcde25c6cfe3809e46925702857dfdbf/volleyball_images.json")
+        // swiftlint:enable line_length
         var request = URLRequest(url: url)
         request.setValue("application/json",
                          forHTTPHeaderField: "Accept")

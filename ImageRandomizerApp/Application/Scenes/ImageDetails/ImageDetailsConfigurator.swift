@@ -31,8 +31,10 @@ class ImageDetailsConfiguratorImpl: ImageDetailsConfigurator {
                                       completionHandlerQueue: .main)
         let apiImageGateway = ApiImagesGatewayImpl(apiClient: apiClient)
         
-        let realm = try! Realm()
-        let localImagesGateway = LocalPersistenceImagesGatewayImpl(realm: realm)
+        guard let datadase = try? Realm() else {
+            return
+        }
+        let localImagesGateway = LocalPersistenceImagesGatewayImpl(realm: datadase)
         let cacheImagesGateway = CacheImagesGatewayImpl(apiImagesGateway: apiImageGateway,
                                                         localPersistanceImagesGateway: localImagesGateway)
         let chooseImageUseCase = ChooseImageUseCaseImpl(cacheImagesGateway: cacheImagesGateway,

@@ -62,7 +62,8 @@ class ImageDetailsRouterImpl: ImageDetailsRouter {
         let apiClient = ApiClientImpl(urlSessionConfiguration: .default,
                                       completionHandlerQueue: .main)
         let apiGateway = ApiImagesGatewayImpl(apiClient: apiClient)
-        let localGateway = LocalPersistenceImagesGatewayImpl(realm: try! Realm())
+        guard let database = try? Realm() else { return }
+        let localGateway = LocalPersistenceImagesGatewayImpl(realm: database)
         let cacheGateway = CacheImagesGatewayImpl(apiImagesGateway: apiGateway,
                                                   localPersistanceImagesGateway: localGateway)
         let displayUseCase = DisplayImagesListUseCaseImpl(imagesGateway: cacheGateway)

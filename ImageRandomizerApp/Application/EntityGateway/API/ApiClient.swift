@@ -18,7 +18,9 @@ protocol ApiClient: class {
 }
 
 protocol URLSessionDescribing {
-    func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
+    func dataTask(with request: URLRequest,
+                  completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void)
+        -> URLSessionDataTask
 }
 
 extension URLSession: URLSessionDescribing {}
@@ -36,7 +38,7 @@ class ApiClientImpl: ApiClient {
     func execute<T: Codable>(request: ApiRequest) -> Observable<T> {
         return Observable<T>.create { observer in
             let task = self.urlSession
-                .dataTask(with: request.urlRequest) { (data, response, error) in
+                .dataTask(with: request.urlRequest) { (data, _, error) in
                     do {
                         let model: T = try JSONDecoder()
                             .decode(T.self,

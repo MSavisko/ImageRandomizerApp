@@ -20,6 +20,7 @@ PODS:
   - RxRelay (5.0.1):
     - RxSwift (~> 5)
   - RxSwift (5.0.1)
+  - SwiftLint (0.39.2)
 
 DEPENDENCIES:
   - Kingfisher (= 5.3.0)
@@ -29,6 +30,7 @@ DEPENDENCIES:
   - RxGesture (= 3.0.1)
   - RxRealm (= 1.0.0)
   - RxSwift (= 5.0.1)
+  - SwiftLint (= 0.39.2)
 
 SPEC REPOS:
   trunk:
@@ -42,6 +44,7 @@ SPEC REPOS:
     - RxRealm
     - RxRelay
     - RxSwift
+    - SwiftLint
 
 SPEC CHECKSUMS:
   Kingfisher: 4692c783ffb99e9e2e40a6eb3e518c3b96c6fa8c
@@ -54,7 +57,8 @@ SPEC CHECKSUMS:
   RxRealm: 1e81dcfca1fb50c3e9b3e1f8102bc875c5156a2e
   RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
   RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  SwiftLint: 22ccbbe3b8008684be5955693bab135e0ed6a447
 
-PODFILE CHECKSUM: 5e9f610ec6856f5e12b516e12c0b3e244ca0ce84
+PODFILE CHECKSUM: e56f85770c73b25b52577cf0c562baf52ce69f65
 
 COCOAPODS: 1.9.3

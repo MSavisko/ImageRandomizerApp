@@ -528,6 +528,7 @@
 			buildPhases = (
 				EED1F498BDB994EC63C76062 /* [CP] Check Pods Manifest.lock */,
 				9257F8082252BDE8007AE74D /* Generate Resource Identifiers via R.swift */,
+				9273542C2483EE6600D2464F /* SwiftLint */,
 				92D54684224BF58C00AD75E7 /* Sources */,
 				92D54685224BF58C00AD75E7 /* Frameworks */,
 				92D54686224BF58C00AD75E7 /* Resources */,
@@ -688,11 +689,29 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/ImageRandomizerApp/Resources/Generated/R.generated.swift",
+				$SRCROOT/ImageRandomizerApp/Resources/Generated/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/ImageRandomizerApp/Resources/Generated/R.generated.swift\"\n";
+		};
+		9273542C2483EE6600D2464F /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Start SwiftLint from Xcode build Phase\"\n\"${PODS_ROOT}/SwiftLint/swiftlint\" --config \"$SRCROOT/.swiftlint.yml\"\n";
 		};
 		E807FDA1C050D4AF74A5710F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
