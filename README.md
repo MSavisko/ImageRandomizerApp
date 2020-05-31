@@ -48,3 +48,7 @@ bundle exec pod install
 * [Architecture: The Lost Years, by Uncle Bob](https://www.youtube.com/watch?v=HhNIttd87xs)
 * [Clean Architecture, By Uncle Bob](https://8thlight.com/blog/uncle-bob/2011/11/22/Clean-Architecture.html)
 * [Uncle Bob's clean architecture - An entity/model class for each layer?](http://softwareengineering.stackexchange.com/questions/303478/uncle-bobs-clean-architecture-an-entity-model-class-for-each-layer)
+
+#### Unit tests
+* [Real-World Unit Testing in Swift](https://www.vadimbulavin.com/real-world-unit-testing-in-swift/)
+* [Unit testing RxSwift application](https://medium.com/vincit/unit-testing-rxswift-application-f0c6ea460429)
