@@ -15,7 +15,7 @@ protocol ImageCellView: class {
     func displayPosition(_ position: Int)
 }
 
-class ImageTableViewCell: UITableViewCell, ImageCellView  {
+class ImageTableViewCell: UITableViewCell, ImageCellView {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var leftImageView: UIImageView!
     @IBOutlet weak var leftLabel: UILabel!

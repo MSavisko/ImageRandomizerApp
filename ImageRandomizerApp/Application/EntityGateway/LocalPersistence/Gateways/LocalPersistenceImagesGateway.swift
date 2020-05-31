@@ -133,9 +133,10 @@ class LocalPersistenceImagesGatewayImpl: LocalPersistenceImagesGateway {
     func fetchLatestImage() -> Observable<Image> {
         let result = withRealm("fetch latest image") { realm
             -> Observable<RealmImage> in
+            let latestFlag = true as NSNumber
             let realmImage = realm
                 .objects(RealmImage.self)
-                .filter("isLatest == %@", NSNumber(booleanLiteral: true))
+                .filter("isLatest == %@", latestFlag)
                 .first
             guard let validRealmImage = realmImage else {
                 return .error(LocalPersistenceError.emptyResult)

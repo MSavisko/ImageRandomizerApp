@@ -14,7 +14,7 @@ protocol ImagesListConfigurator {
 }
 
 class ImagesListConfiguratorImpl: ImagesListConfigurator {
-    var imageListPresenterDelegate: ImagesListPresenterDelegate?
+    weak var imageListPresenterDelegate: ImagesListPresenterDelegate?
     
     init(imageListPresenterDelegate: ImagesListPresenterDelegate?) {
         self.imageListPresenterDelegate = imageListPresenterDelegate
@@ -25,7 +25,8 @@ class ImagesListConfiguratorImpl: ImagesListConfigurator {
         let apiClient = ApiClientImpl(urlSessionConfiguration: .default,
                                       completionHandlerQueue: .main)
         let apiImagesGateway = ApiImagesGatewayImpl(apiClient: apiClient)
-        let localPersistanceImagesGateway = LocalPersistenceImagesGatewayImpl(realm: try! Realm())
+        guard let database = try? Realm() else { return }
+        let localPersistanceImagesGateway = LocalPersistenceImagesGatewayImpl(realm: database)
         let cacheImagesGateway = CacheImagesGatewayImpl(apiImagesGateway: apiImagesGateway,
                                                         localPersistanceImagesGateway: localPersistanceImagesGateway)
         

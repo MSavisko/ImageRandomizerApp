@@ -1,0 +1,12 @@
+disabled_rules: # rule identifiers to exclude from running
+ - trailing_whitespace
+ - vertical_whitespace
+ - superfluous_disable_command
+#custom_rules:
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Pods
+  - ImageRandomizerApp/Resources/Generated/R.generated.swift
+line_length:
+  warning: 120
+  ignores_comments: true
+reporter: "xcode" # reporter type (xcode, json, csv, checkstyle, junit, html, emoji)

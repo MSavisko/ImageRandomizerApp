@@ -65,7 +65,7 @@ extension ImageDetailsViewController: ImageDetailsView {
     func display(image: Image) {
         imageView.setImage(url: image.imageURL,
                            isIndicatorExist: false)
-            .subscribe(onNext: { isLoaded in })
+            .subscribe(onNext: { _ in })
             .disposed(by: disposeBag)
         nameTextField.text = image.name
     }
