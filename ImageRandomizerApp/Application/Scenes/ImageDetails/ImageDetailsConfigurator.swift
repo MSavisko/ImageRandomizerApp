@@ -37,8 +37,12 @@ class ImageDetailsConfiguratorImpl: ImageDetailsConfigurator {
         let localImagesGateway = LocalPersistenceImagesGatewayImpl(realm: datadase)
         let cacheImagesGateway = CacheImagesGatewayImpl(apiImagesGateway: apiImageGateway,
                                                         localPersistanceImagesGateway: localImagesGateway)
+        let defaultRandomizer: ChooseImageRandomizer = { images in
+            return images.randomElement()
+        }
         let chooseImageUseCase = ChooseImageUseCaseImpl(cacheImagesGateway: cacheImagesGateway,
-                                                        localPersistanceImagesGateway: localImagesGateway)
+                                                        localPersistanceImagesGateway: localImagesGateway,
+                                                        imageRandomizer: defaultRandomizer)
         
         // Update Image Use Case
         let updateImageUseCase = UpdateImageUseCaseImpl(localPersistenceImagesGateway: localImagesGateway)

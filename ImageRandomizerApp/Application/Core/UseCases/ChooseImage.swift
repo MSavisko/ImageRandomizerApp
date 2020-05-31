@@ -22,15 +22,20 @@ enum ChooseImageError: Error {
     case noImageFound
 }
 
+typealias ChooseImageRandomizer = ([Image]) -> Image?
+
 class ChooseImageUseCaseImpl: ChooseImageUseCase {
     private let cacheImagesGateway: CacheImagesGateway
     private let localPersistanceImagesGateway: LocalPersistenceImagesGateway
     private var disposeBag = DisposeBag()
+    private let imageRandomizer: ChooseImageRandomizer
     
     init(cacheImagesGateway: CacheImagesGateway,
-         localPersistanceImagesGateway: LocalPersistenceImagesGateway) {
+         localPersistanceImagesGateway: LocalPersistenceImagesGateway,
+         imageRandomizer: @escaping ChooseImageRandomizer) {
         self.cacheImagesGateway = cacheImagesGateway
         self.localPersistanceImagesGateway = localPersistanceImagesGateway
+        self.imageRandomizer = imageRandomizer
     }
     
     func chooseImage(parameters: ChooseImageParameters) -> Observable<Image> {
@@ -49,9 +54,10 @@ class ChooseImageUseCaseImpl: ChooseImageUseCase {
     
     private func handleRandomImageChoose(with observer: AnyObserver<Image>) {
         cacheImagesGateway.fetchImages()
-            .subscribe(onNext: { images in
+            .subscribe(onNext: { [imageRandomizer] images in
+                
                 guard
-                    let image = images.randomElement()
+                    let image = imageRandomizer(images)
                 else {
                     observer.onError(ChooseImageError.noImageFound)
                     observer.onCompleted()

@@ -18,6 +18,10 @@ protocol LocalPersistenceImagesGateway: ImagesGateway {
     func fetchLatestImage() -> Observable<Image>
 }
 
+// sourcery:begin: AutoMockable
+extension LocalPersistenceImagesGateway {}
+// sourcery:end
+
 protocol RealmDescribing: class {
     func write(withoutNotifying tokens: [NotificationToken],
                _ block: (() throws -> Void)) throws

@@ -36,6 +36,9 @@
 		925B6DE522516F110047FAE8 /* ImagesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B6DE422516F110047FAE8 /* ImagesListPresenter.swift */; };
 		925B6DE722516F440047FAE8 /* ImagesListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B6DE622516F440047FAE8 /* ImagesListRouter.swift */; };
 		925B6DE922516F830047FAE8 /* ImagesListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 925B6DE822516F830047FAE8 /* ImagesListConfigurator.swift */; };
+		927354312484233900D2464F /* ImageTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 927354302484233900D2464F /* ImageTests.swift */; };
+		9273543B2484372700D2464F /* Sourcery.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9273543A2484372700D2464F /* Sourcery.generated.swift */; };
+		9273543F2484426700D2464F /* ChooseImageUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9273543E2484426700D2464F /* ChooseImageUseCaseTests.swift */; };
 		929EA655224C2243005910F9 /* ImageDetailsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929EA654224C2243005910F9 /* ImageDetailsConfigurator.swift */; };
 		929EA657224C2458005910F9 /* ImageDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 929EA656224C2458005910F9 /* ImageDetailsPresenter.swift */; };
 		92BEE87B224C1047003BF17F /* ImageDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92BEE87A224C1047003BF17F /* ImageDetailsViewController.swift */; };
@@ -106,6 +109,10 @@
 		925B6DE422516F110047FAE8 /* ImagesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListPresenter.swift; sourceTree = "<group>"; };
 		925B6DE622516F440047FAE8 /* ImagesListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListRouter.swift; sourceTree = "<group>"; };
 		925B6DE822516F830047FAE8 /* ImagesListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagesListConfigurator.swift; sourceTree = "<group>"; };
+		927354302484233900D2464F /* ImageTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageTests.swift; sourceTree = "<group>"; };
+		92735439248436AE00D2464F /* AutoMockable.stencil */ = {isa = PBXFileReference; lastKnownFileType = text; path = AutoMockable.stencil; sourceTree = "<group>"; };
+		9273543A2484372700D2464F /* Sourcery.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sourcery.generated.swift; sourceTree = "<group>"; };
+		9273543E2484426700D2464F /* ChooseImageUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseImageUseCaseTests.swift; sourceTree = "<group>"; };
 		929EA654224C2243005910F9 /* ImageDetailsConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsConfigurator.swift; sourceTree = "<group>"; };
 		929EA656224C2458005910F9 /* ImageDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsPresenter.swift; sourceTree = "<group>"; };
 		92BEE87A224C1047003BF17F /* ImageDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDetailsViewController.swift; sourceTree = "<group>"; };
@@ -214,6 +221,7 @@
 			isa = PBXGroup;
 			children = (
 				9257F8092252C1C9007AE74D /* R.generated.swift */,
+				9273543A2484372700D2464F /* Sourcery.generated.swift */,
 			);
 			path = Generated;
 			sourceTree = "<group>";
@@ -416,6 +424,63 @@
 			path = Errors;
 			sourceTree = "<group>";
 		};
+		9273542E2484230400D2464F /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				9273542F2484232300D2464F /* Entities */,
+				9273543D248441C900D2464F /* UseCases */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		9273542F2484232300D2464F /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				927354302484233900D2464F /* ImageTests.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		92735435248436AE00D2464F /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				92735436248436AE00D2464F /* Extras */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		92735436248436AE00D2464F /* Extras */ = {
+			isa = PBXGroup;
+			children = (
+				92735437248436AE00D2464F /* Sourcery */,
+			);
+			path = Extras;
+			sourceTree = "<group>";
+		};
+		92735437248436AE00D2464F /* Sourcery */ = {
+			isa = PBXGroup;
+			children = (
+				92735438248436AE00D2464F /* Templates */,
+			);
+			path = Sourcery;
+			sourceTree = "<group>";
+		};
+		92735438248436AE00D2464F /* Templates */ = {
+			isa = PBXGroup;
+			children = (
+				92735439248436AE00D2464F /* AutoMockable.stencil */,
+			);
+			path = Templates;
+			sourceTree = "<group>";
+		};
+		9273543D248441C900D2464F /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				9273543E2484426700D2464F /* ChooseImageUseCaseTests.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
 		92BEE876224C0F2A003BF17F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,6 +538,7 @@
 			isa = PBXGroup;
 			children = (
 				92D5468A224BF58C00AD75E7 /* ImageRandomizerApp */,
+				92735435248436AE00D2464F /* Common */,
 				92D5469F224BF58D00AD75E7 /* ImageRandomizerAppTests */,
 				92D546AA224BF58D00AD75E7 /* ImageRandomizerAppUITests */,
 				92D54689224BF58C00AD75E7 /* Products */,
@@ -504,6 +570,7 @@
 		92D5469F224BF58D00AD75E7 /* ImageRandomizerAppTests */ = {
 			isa = PBXGroup;
 			children = (
+				9273542E2484230400D2464F /* Core */,
 				92D546A0224BF58D00AD75E7 /* ImageRandomizerAppTests.swift */,
 				92D546A2224BF58D00AD75E7 /* Info.plist */,
 			);
@@ -528,6 +595,7 @@
 			buildPhases = (
 				EED1F498BDB994EC63C76062 /* [CP] Check Pods Manifest.lock */,
 				9257F8082252BDE8007AE74D /* Generate Resource Identifiers via R.swift */,
+				9273543324842B4F00D2464F /* Generate Code with Sourcery */,
 				9273542C2483EE6600D2464F /* SwiftLint */,
 				92D54684224BF58C00AD75E7 /* Sources */,
 				92D54685224BF58C00AD75E7 /* Frameworks */,
@@ -713,6 +781,24 @@
 			shellPath = /bin/sh;
 			shellScript = "echo \"Start SwiftLint from Xcode build Phase\"\n\"${PODS_ROOT}/SwiftLint/swiftlint\" --config \"$SRCROOT/.swiftlint.yml\"\n";
 		};
+		9273543324842B4F00D2464F /* Generate Code with Sourcery */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Code with Sourcery";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "echo \"Start Sourcery without cache from Xcode build Phase\"\n\"${PODS_ROOT}/Sourcery/bin/sourcery\" --config \"$SRCROOT/.image-randomizer-app.sourcery.yml\"\n";
+		};
 		E807FDA1C050D4AF74A5710F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -798,6 +884,7 @@
 				925B6DDD225127D90047FAE8 /* ObservableError.swift in Sources */,
 				925B6DC4224FE4630047FAE8 /* ApiImagesGateway.swift in Sources */,
 				925B6DAF224FAE9F0047FAE8 /* ImageDetailsRouter.swift in Sources */,
+				9273543B2484372700D2464F /* Sourcery.generated.swift in Sources */,
 				92BEE87F224C123B003BF17F /* Image.swift in Sources */,
 				9257F80122527361007AE74D /* UIColor+hexRGB.swift in Sources */,
 				925B6DBB224FE11E0047FAE8 /* ApiImage.swift in Sources */,
@@ -824,7 +911,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9273543F2484426700D2464F /* ChooseImageUseCaseTests.swift in Sources */,
 				92D546A1224BF58D00AD75E7 /* ImageRandomizerAppTests.swift in Sources */,
+				927354312484233900D2464F /* ImageTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

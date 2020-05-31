@@ -10,6 +10,7 @@ def install_dependencies
   pod 'RxRealm', '1.0.0'
   pod 'R.swift', '5.0.2'
   pod 'SwiftLint', '0.39.2'
+  pod 'Sourcery', '0.18.0'
 end
 
 target 'ImageRandomizerApp' do

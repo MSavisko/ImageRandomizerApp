@@ -11,6 +11,10 @@ import RxSwift
 
 protocol CacheImagesGateway: ImagesGateway {}
 
+// sourcery:begin: AutoMockable
+extension CacheImagesGateway {}
+// sourcery:end
+
 class CacheImagesGatewayImpl: CacheImagesGateway {
     private let apiImagesGateway: ApiImagesGateway
     private let localPersistanceImagesGateway: LocalPersistenceImagesGateway

@@ -47,16 +47,6 @@
                ReferencedContainer = "container:ImageRandomizerApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "92D546A6224BF58D00AD75E7"
-               BuildableName = "ImageRandomizerAppUITests.xctest"
-               BlueprintName = "ImageRandomizerAppUITests"
-               ReferencedContainer = "container:ImageRandomizerApp.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
